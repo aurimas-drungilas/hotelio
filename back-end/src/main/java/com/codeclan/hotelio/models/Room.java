@@ -1,6 +1,7 @@
 package com.codeclan.hotelio.models;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -13,11 +14,12 @@ public class Room {
     private int roomNumber;
     @Column(name = "capacity")
     private int capacity;
-    private List<Booking> bookings;
+//    private List<Booking> bookings;
 
     public Room(int roomNumber, int capacity) {
         this.roomNumber = roomNumber;
         this.capacity = capacity;
+//        this.bookings = new ArrayList<Booking>();
     }
 
     public Room() {
@@ -47,15 +49,15 @@ public class Room {
         this.capacity = capacity;
     }
 
-    public List<Booking> getBookings() {
-        return bookings;
-    }
-
-    public void setBookings(List<Booking> bookings) {
-        this.bookings = bookings;
-    }
-
-    public void addBooking(Booking booking) {
-        this.bookings.add(booking);
-    }
+//    public List<Booking> getBookings() {
+//        return bookings;
+//    }
+//
+//    public void setBookings(List<Booking> bookings) {
+//        this.bookings = bookings;
+//    }
+//
+//    public void addBooking(Booking booking) {
+//        this.bookings.add(booking);
+//    }
 }
