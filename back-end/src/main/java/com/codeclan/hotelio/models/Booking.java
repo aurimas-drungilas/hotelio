@@ -19,8 +19,7 @@ public class Booking {
     private Customer customer;
     private List<Room> rooms;
 
-    public Booking(Long id, Date start, Date end, int numberOfPeople, Customer customer, List<Room> rooms) {
-        this.id = id;
+    public Booking(Date start, Date end, int numberOfPeople, Customer customer, List<Room> rooms) {
         this.start = start;
         this.end = end;
         this.numberOfPeople = numberOfPeople;

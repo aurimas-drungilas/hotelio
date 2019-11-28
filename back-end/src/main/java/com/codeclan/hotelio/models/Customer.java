@@ -17,8 +17,7 @@ public class Customer {
     private int age;
     private List<Booking> bookings;
 
-    public Customer(Long id, String firstName, String lastName, int age) {
-        this.id = id;
+    public Customer(String firstName, String lastName, int age) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;

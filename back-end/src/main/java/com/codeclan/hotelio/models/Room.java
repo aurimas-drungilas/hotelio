@@ -15,8 +15,7 @@ public class Room {
     private int capacity;
     private List<Booking> bookings;
 
-    public Room(Long id, int roomNumber, int capacity) {
-        this.id = id;
+    public Room(int roomNumber, int capacity) {
         this.roomNumber = roomNumber;
         this.capacity = capacity;
     }
