@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import GuestContainer from './guests/GuestContainer';
 import RoomContainer from './rooms/RoomContainer';
+import BookingFormContainer from './bookings/BookingFormContainer';
 
 class MainContainer extends Component {
     render() { 
@@ -15,6 +16,9 @@ class MainContainer extends Component {
                         </Switch>
                         <Switch>
                             <Route path="/rooms" component={RoomContainer} />
+                        </Switch>
+                        <Switch>
+                            <Route path="/bookings/new" component={BookingFormContainer} />
                         </Switch>
                     </Fragment>
                 </Router>
