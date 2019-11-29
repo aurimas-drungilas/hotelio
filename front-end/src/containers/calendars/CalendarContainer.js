@@ -117,6 +117,7 @@ class CalendarContainer extends Component {
                     dateClick={this.handleDateClick}
                     resources={this.state.resources}
                     resourceColumns={this.state.resourceColumns}
+                    schedulerLicenseKey="GPL-My-Project-Is-Open-Source"
                     />
             </div>
          );
