@@ -11,7 +11,9 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Component
 public class DataLoader implements ApplicationRunner {
@@ -45,7 +47,10 @@ public class DataLoader implements ApplicationRunner {
         Customer customerJordan = new Customer("Jordan", "Davidson", 29);
         customerRepository.save(customerJordan);
 
-        Booking booking1 = new Booking("21/11/2019", "27/11/2019", 1, customerNiall);
+        List<Room> booking1_rooms= new ArrayList<Room>();
+        booking1_rooms.add(room404);
+        booking1_rooms.add(room405);
+        Booking booking1 = new Booking("21/11/2019", "27/11/2019", 1, customerNiall, booking1_rooms);
         bookingRepository.save(booking1);
     }
 }

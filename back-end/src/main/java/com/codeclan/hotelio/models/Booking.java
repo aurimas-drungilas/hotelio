@@ -1,6 +1,7 @@
 package com.codeclan.hotelio.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -20,16 +21,25 @@ public class Booking {
     private int numberOfPeople;
     @JsonIgnoreProperties("bookings")
     @ManyToOne
+    @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
     @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;
-//    private List<Room> rooms;
+    @JsonIgnoreProperties("bookings")
+    @ManyToMany
+    @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
+    @JoinTable(
+            name = "rooms_bookings",
+            joinColumns = {@JoinColumn(name = "booking_id", nullable = false, updatable = false)},
+            inverseJoinColumns = {@JoinColumn(name="room_id", nullable = false, updatable = false)}
+    )
+    private List<Room> rooms;
 
-    public Booking(String start, String end, int numberOfPeople, Customer customer) { //, List<Room> rooms
+    public Booking(String start, String end, int numberOfPeople, Customer customer, List<Room> rooms) {
         this.startDate = start;
         this.endDate = end;
         this.numberOfPeople = numberOfPeople;
         this.customer = customer;
-//        this.rooms = rooms;
+        this.rooms = rooms;
     }
 
     public Booking() {
@@ -43,20 +53,20 @@ public class Booking {
         this.id = id;
     }
 
-    public String getStart() {
+    public String getStartDate() {
         return startDate;
     }
 
-    public void setStart(String start) {
-        this.startDate = start;
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
     }
 
-    public String getEnd() {
+    public String getEndDate() {
         return endDate;
     }
 
-    public void setEnd(String end) {
-        this.endDate = end;
+    public void setEndDate(String endDate) {
+        this.endDate = endDate;
     }
 
     public int getNumberOfPeople() {
@@ -75,15 +85,15 @@ public class Booking {
         this.customer = customer;
     }
 
-//    public List<Room> getRooms() {
-//        return rooms;
-//    }
-//
-//    public void setRooms(List<Room> rooms) {
-//        this.rooms = rooms;
-//    }
-//
-//    public void addRoom(Room room) {
-//        this.rooms.add(room);
-//    }
+    public List<Room> getRooms() {
+        return rooms;
+    }
+
+    public void setRooms(List<Room> rooms) {
+        this.rooms = rooms;
+    }
+
+    public void addRoom(Room room) {
+        this.rooms.add(room);
+    }
 }
