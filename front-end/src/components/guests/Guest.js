@@ -9,7 +9,7 @@ const Guest = (props) => {
 
     return ( 
         <Fragment>
-            <h4>{props.guest.firstName} {props.guest.lastName}</h4>
+            <h4>Guest name: {props.guest.firstName} {props.guest.lastName}</h4>
         </Fragment>
      );
 }
