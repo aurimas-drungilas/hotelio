@@ -3,9 +3,9 @@ import Guest from './Guest';
 
 const GuestList = (props) => {
 
-    // if(props.guest.length === 0){
-    //     return "Loading your requested information."
-    // }
+    if(props.guests.length === 0){
+        return "Loading your requested information."
+    }
 
     const guests = props.guests.map((guest, index) => {
         return(
