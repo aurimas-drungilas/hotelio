@@ -29,7 +29,7 @@ class CalendarContainer extends Component {
             events: [
                 { 
                     id: 1, 
-                    resourceId: 1, 
+                    resourceIds: [1], 
                     title: 'Jordan\'s booking', 
                     start: '2019-09-01', 
                     end: '2019-11-09', 
@@ -37,7 +37,7 @@ class CalendarContainer extends Component {
                 },
                 { 
                     id: 2, 
-                    resourceId: 3, 
+                    resourceIds: [2], 
                     title: 'Nial\'s booking', 
                     start: '2019-11-02', 
                     end: '2019-11-25', 
@@ -45,7 +45,7 @@ class CalendarContainer extends Component {
                 },
                 { 
                     id: 3, 
-                    resourceId: 3, 
+                    resourceIds: [2, 3], 
                     title: 'Nial\'s 2nd booking', 
                     start: '2019-11-03', 
                     end: '2019-12-09', 
@@ -91,7 +91,7 @@ class CalendarContainer extends Component {
                     // creates a new array
                     title: "New Booking",
                     // TODO: look up how to get resourceId from the arg
-                    resourceId: 2, 
+                    resourceIds: [2], 
                     start: arg.date,
                     end: arg.date,
                     allDay: true
