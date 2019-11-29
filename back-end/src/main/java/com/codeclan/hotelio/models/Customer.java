@@ -1,5 +1,8 @@
 package com.codeclan.hotelio.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.hibernate.annotations.Cascade;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,13 +19,16 @@ public class Customer {
     private String lastName;
     @Column(name = "age")
     private int age;
-//    private List<Booking> bookings;
+    @JsonIgnoreProperties("customers")
+    @Cascade(org.hibernate.annotations.CascadeType.DELETE)
+    @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)
+    private List<Booking> bookings;
 
     public Customer(String firstName, String lastName, int age) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
-//        this.bookings = new ArrayList<Booking>();
+        this.bookings = new ArrayList<Booking>();
     }
 
     public Customer() {
@@ -60,15 +66,15 @@ public class Customer {
         this.age = age;
     }
 
-//    public List<Booking> getBookings() {
-//        return bookings;
-//    }
-//
-//    public void setBookings(List<Booking> bookings) {
-//        this.bookings = bookings;
-//    }
-//
-//    public void addBooking(Booking booking) {
-//        this.bookings.add(booking);
-//    }
+    public List<Booking> getBookings() {
+        return bookings;
+    }
+
+    public void setBookings(List<Booking> bookings) {
+        this.bookings = bookings;
+    }
+
+    public void addBooking(Booking booking) {
+        this.bookings.add(booking);
+    }
 }

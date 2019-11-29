@@ -1,5 +1,7 @@
 package com.codeclan.hotelio.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
@@ -16,14 +18,17 @@ public class Booking {
     private String endDate;
     @Column(name = "number_of_people")
     private int numberOfPeople;
-//    private Customer customer;
+    @JsonIgnoreProperties("bookings")
+    @ManyToOne
+    @JoinColumn(name = "customer_id", nullable = false)
+    private Customer customer;
 //    private List<Room> rooms;
 
-    public Booking(String start, String end, int numberOfPeople) { //, Customer customer, List<Room> rooms
+    public Booking(String start, String end, int numberOfPeople, Customer customer) { //, List<Room> rooms
         this.startDate = start;
         this.endDate = end;
         this.numberOfPeople = numberOfPeople;
-//        this.customer = customer;
+        this.customer = customer;
 //        this.rooms = rooms;
     }
 
@@ -62,14 +67,14 @@ public class Booking {
         this.numberOfPeople = numberOfPeople;
     }
 
-//    public Customer getCustomer() {
-//        return customer;
-//    }
-//
-//    public void setCustomer(Customer customer) {
-//        this.customer = customer;
-//    }
-//
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
 //    public List<Room> getRooms() {
 //        return rooms;
 //    }
