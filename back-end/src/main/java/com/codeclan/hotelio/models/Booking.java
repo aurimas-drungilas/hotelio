@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
-import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -22,8 +21,8 @@ public class Booking {
     @JsonIgnoreProperties("bookings")
     @ManyToOne
     @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
-    @JoinColumn(name = "customer_id", nullable = false)
-    private Customer customer;
+    @JoinColumn(name = "guest_id", nullable = false)
+    private Guest guest;
     @JsonIgnoreProperties("bookings")
     @ManyToMany
     @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
@@ -34,11 +33,11 @@ public class Booking {
     )
     private List<Room> rooms;
 
-    public Booking(String start, String end, int numberOfPeople, Customer customer, List<Room> rooms) {
+    public Booking(String start, String end, int numberOfPeople, Guest guest, List<Room> rooms) {
         this.startDate = start;
         this.endDate = end;
         this.numberOfPeople = numberOfPeople;
-        this.customer = customer;
+        this.guest = guest;
         this.rooms = rooms;
     }
 
@@ -77,12 +76,12 @@ public class Booking {
         this.numberOfPeople = numberOfPeople;
     }
 
-    public Customer getCustomer() {
-        return customer;
+    public Guest getGuest() {
+        return guest;
     }
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
+    public void setGuest(Guest guest) {
+        this.guest = guest;
     }
 
     public List<Room> getRooms() {

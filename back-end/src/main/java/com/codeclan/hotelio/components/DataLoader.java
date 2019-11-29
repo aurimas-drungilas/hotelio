@@ -1,10 +1,10 @@
 package com.codeclan.hotelio.components;
 
 import com.codeclan.hotelio.models.Booking;
-import com.codeclan.hotelio.models.Customer;
+import com.codeclan.hotelio.models.Guest;
 import com.codeclan.hotelio.models.Room;
 import com.codeclan.hotelio.repositories.BookingRepository;
-import com.codeclan.hotelio.repositories.CustomerRepository;
+import com.codeclan.hotelio.repositories.GuestRepository;
 import com.codeclan.hotelio.repositories.RoomRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -12,7 +12,6 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Component
@@ -20,7 +19,7 @@ public class DataLoader implements ApplicationRunner {
     @Autowired
     BookingRepository bookingRepository;
     @Autowired
-    CustomerRepository customerRepository;
+    GuestRepository customerRepository;
     @Autowired
     RoomRepository roomRepository;
 
@@ -41,16 +40,16 @@ public class DataLoader implements ApplicationRunner {
         Room room407 = new Room(407, 4);
         roomRepository.save(room407);
 
-        Customer customerNiall = new Customer("Niall", "Morris", 26);
-        customerRepository.save(customerNiall);
+        Guest guestNiall = new Guest("Niall", "Morris", 26);
+        customerRepository.save(guestNiall);
 
-        Customer customerJordan = new Customer("Jordan", "Davidson", 29);
-        customerRepository.save(customerJordan);
+        Guest guestJordan = new Guest("Jordan", "Davidson", 29);
+        customerRepository.save(guestJordan);
 
         List<Room> booking1_rooms= new ArrayList<Room>();
         booking1_rooms.add(room404);
         booking1_rooms.add(room405);
-        Booking booking1 = new Booking("21/11/2019", "27/11/2019", 1, customerNiall, booking1_rooms);
+        Booking booking1 = new Booking("21/11/2019", "27/11/2019", 1, guestNiall, booking1_rooms);
         bookingRepository.save(booking1);
     }
 }

@@ -6,7 +6,7 @@ import org.springframework.data.rest.core.config.Projection;
 
 import java.util.List;
 
-@Projection(name = "embedCustomer", types = Room.class)
+@Projection(name = "embedRoom", types = Room.class)
 public interface EmbedRoom {
     int getRoomNumber();
     int getCapacity();

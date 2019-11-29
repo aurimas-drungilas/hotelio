@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "customers")
-public class Customer {
+@Table(name = "guests")
+public class Guest {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -19,19 +19,19 @@ public class Customer {
     private String lastName;
     @Column(name = "age")
     private int age;
-    @JsonIgnoreProperties("customers")
+    @JsonIgnoreProperties("guests")
     @Cascade(org.hibernate.annotations.CascadeType.DELETE)
-    @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "guest", fetch = FetchType.LAZY)
     private List<Booking> bookings;
 
-    public Customer(String firstName, String lastName, int age) {
+    public Guest(String firstName, String lastName, int age) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
         this.bookings = new ArrayList<Booking>();
     }
 
-    public Customer() {
+    public Guest() {
     }
 
     public Long getId() {
