@@ -8,9 +8,10 @@ Find project brief [here](PROJECT_BRIEF.md).
 
 ### Back-end
 
-1. Set the `Project SDK` version to `1.8` on IntelliJ (`Cmd+;`).
-2. Create the database `hotelio` on postgress db: `createdb hotelio -U postgres`.  
-...
+1. Open the application on `IntelliJ`.
+2. Set the `Project SDK` version to `1.8` on IntelliJ (`Cmd+;`).
+3. Create the database `hotelio` on postgress db: `createdb hotelio -U postgres`.  
+4. Run the `HotelioApplication`.
 
 ### Front-end
 
