@@ -4,13 +4,14 @@ import GuestContainer from './guests/GuestContainer';
 import CalendarContainer from './calendars/CalendarContainer';
 import RoomContainer from './rooms/RoomContainer';
 import BookingFormContainer from './bookings/BookingFormContainer';
+import NavBar from '../NavBar';
 
 
 class MainContainer extends Component {
     render() { 
         return ( 
             <div className="main-container">
-            <p>Test</p>
+            <NavBar />
                 <Router>
                     <Fragment>
                         <Switch>
