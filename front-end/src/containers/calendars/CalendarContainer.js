@@ -78,7 +78,7 @@ class CalendarContainer extends Component {
                   labelText: 'Capacity',
                   field: 'capacity'
                 }
-              ]
+            ]
         }
     }
 
@@ -88,9 +88,8 @@ class CalendarContainer extends Component {
             this.setState({
                 // add new event data
                 events: this.state.events.concat({
-                    // creates a new array
                     title: "New Booking",
-                    // TODO: look up how to get resourceId from the arg
+                    // ResourceIds should come from what rooms are selected during the new booking process.
                     resourceIds: [2], 
                     start: arg.date,
                     end: arg.date,
@@ -100,7 +99,7 @@ class CalendarContainer extends Component {
         }
     };
 
-    // Clicking on a specific bookings
+    // Clicking on a specific booking
     handleEventClick = arg => {
         alert('Event: ' + arg.event.title + '. This could redirect to the booking info page.');
     };
