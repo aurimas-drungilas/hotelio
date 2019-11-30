@@ -45,10 +45,50 @@ class CalendarContainer extends Component {
                 },
                 { 
                     id: 3, 
-                    resourceIds: [2, 3], 
+                    resourceIds: [6, 7], 
+                    title: 'Nial\'s 2nd booking', 
+                    start: '2019-11-05', 
+                    end: '2019-12-09', 
+                    allDay: true 
+                },
+                { 
+                    id: 4, 
+                    resourceIds: [10], 
+                    title: 'Nial\'s 2nd booking', 
+                    start: '2019-11-02', 
+                    end: '2019-11-06', 
+                    allDay: true 
+                },
+                { 
+                    id: 5, 
+                    resourceIds: [12], 
+                    title: 'Nial\'s 2nd booking', 
+                    start: '2019-11-03', 
+                    end: '2019-11-11', 
+                    allDay: true 
+                },
+                { 
+                    id: 6, 
+                    resourceIds: [10], 
+                    title: 'Nial\'s 2nd booking', 
+                    start: '2019-11-07', 
+                    end: '2019-11-11', 
+                    allDay: true 
+                },
+                { 
+                    id: 7, 
+                    resourceIds: [15], 
                     title: 'Nial\'s 2nd booking', 
                     start: '2019-11-03', 
                     end: '2019-12-09', 
+                    allDay: true 
+                },
+                { 
+                    id: 8, 
+                    resourceIds: [12], 
+                    title: 'Nial\'s 2nd booking', 
+                    start: '2019-11-12', 
+                    end: '2019-11-13', 
                     allDay: true 
                 }
             ],
@@ -66,6 +106,76 @@ class CalendarContainer extends Component {
                 {
                     id: 3,
                     title: "Room 406",
+                    capacity: 4
+                },
+                {
+                    id: 4,
+                    title: "Room 405",
+                    capacity: 2
+                },
+                {
+                    id: 5,
+                    title: "Room 406",
+                    capacity: 2
+                },
+                {
+                    id: 6,
+                    title: "Room 407",
+                    capacity: 2
+                },
+                {
+                    id: 7,
+                    title: "Room 408",
+                    capacity: 2
+                },
+                {
+                    id: 8,
+                    title: "Room 409",
+                    capacity: 2
+                },
+                {
+                    id: 9,
+                    title: "Room 410",
+                    capacity: 2
+                },
+                {
+                    id: 2,
+                    title: "Room 411",
+                    capacity: 2
+                },
+                {
+                    id: 10,
+                    title: "Room 412",
+                    capacity: 2
+                },
+                {
+                    id: 11,
+                    title: "Room 413",
+                    capacity: 2
+                },
+                {
+                    id: 12,
+                    title: "Room 414",
+                    capacity: 2
+                },
+                {
+                    id: 13,
+                    title: "Room 415",
+                    capacity: 2
+                },
+                {
+                    id: 14,
+                    title: "Room 416",
+                    capacity: 2
+                },
+                {
+                    id: 15,
+                    title: "Room 417",
+                    capacity: 2
+                },
+                {
+                    id: 16,
+                    title: "Room 418",
                     capacity: 4
                 }
             ],
