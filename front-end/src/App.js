@@ -1,12 +1,17 @@
 import React from 'react';
 import './App.css';
 import MainContainer from './containers/MainContainer';
+import SidebarContainer from './containers/SidebarContainer';
 
 function App() {
   return (
     <div className="App">
-      <h1>Hotelio</h1>
+    <div className="sidebar">
+      <SidebarContainer />
+    </div>
+    <div className="main">
       <MainContainer />
+    </div>
     </div>
   );
 }
