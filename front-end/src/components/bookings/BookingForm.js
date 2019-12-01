@@ -7,11 +7,18 @@ class BookingForm extends React.Component {
         super(props);
         this.state = {
             availableRooms: [],
-            availableGuests: []
+            selectedRooms: [],
+            availableGuests: [],
+            selectedGuest: null,
+            startDate: new Date().toISOString().substring(0, 10),
+            endDate: new Date(new Date().getTime() + 86400000).toISOString().substring(0, 10),
+            numberOfPeople: 2
         };
         this.handleNewBooking = this.handleNewBooking.bind(this);
         this.populateAvailableRooms = this.populateAvailableRooms.bind(this);
         this.populateAvailableGuests = this.populateAvailableGuests.bind(this);
+        this.handleStartDateChange = this.handleStartDateChange.bind(this);
+        this.hanhandleEndDateChange = this.handleEndDateChange.bind(this);
     }
 
     componentDidMount() {
@@ -50,8 +57,19 @@ class BookingForm extends React.Component {
             "numberOfPeople": event.target.numberOfPeople.value,
             "rooms": roomsSelected
         }
-        console.dir(booking);
         this.props.onNewBooking(booking);
+    }
+
+    handleStartDateChange(event) {
+        console.log(event.target.value);
+    }
+
+    handleEndDateChange(event) {
+        console.log(event.target.value);
+    }
+
+    handleNumberOfPeopleChange(event) {
+        console.log(event.target.value);
     }
 
     render() {
@@ -81,17 +99,17 @@ class BookingForm extends React.Component {
 
                     <div className="booking-form__field">
                         <p>Arrival date</p>
-                        <input type="date" name="startDate" value="2019-12-02" required />
+                        <input type="date" name="startDate" defaultValue={this.state.startDate} onChange={this.handleStartDateChange} required />
                     </div>
 
                     <div className="booking-form__field">
                         <p>Departure date</p>
-                        <input type="date" name="endDate" value="2019-12-03" required />
+                        <input type="date" name="endDate" defaultValue={this.state.endDate} onChange={this.handleEndDateChange}  required />
                     </div>
 
                     <div className="booking-form__field">
                         <p>Number of People</p>
-                        <input type="number" name="numberOfPeople" value="2" required />
+                        <input type="number" name="numberOfPeople" defaultValue={this.state.numberOfPeople} onChange={this.handleNumberOfPeopleChange} required />
                     </div>
 
                     <div className="booking-form__field">

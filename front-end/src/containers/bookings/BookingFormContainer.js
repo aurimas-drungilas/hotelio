@@ -11,7 +11,7 @@ class BookingFormContainer extends Component {
     handleNewBooking(booking){
         const request = new Request();
         request.post('/api/bookings', booking).then(() => {
-            window.location = '/bookings'
+            window.location = '/calendars'
         })
     }
 
