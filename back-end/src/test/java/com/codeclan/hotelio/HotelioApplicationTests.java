@@ -10,7 +10,10 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -45,16 +48,26 @@ class HotelioApplicationTests {
 	}
 
 	@Test
-	void canCreateNewBooking() {
+	void canCreateNewBooking() throws ParseException {
+		// Store the initial bookings count
 		int initialBookingsCount = bookingRepository.findAll().size();
+		// Make a room
 		Room room501 = new Room(501, 2);
 		roomRepository.save(room501);
-		Guest guestPeter = new Guest("Peter", "Pan", 17);
-		guestRepository.save(guestPeter);
+		// Store the room in a list
 		List<Room> booking1_rooms= new ArrayList<Room>();
 		booking1_rooms.add(room501);
-		Booking booking1 = new Booking("21/11/2019", "27/11/2019", 1, guestPeter, booking1_rooms);
+		// Make a guest
+		Guest guestPeter = new Guest("Peter", "Pan", 17);
+		guestRepository.save(guestPeter);
+		// Make start and end dates
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+		Date booking1_startDate = format.parse("2019-11-21");
+		Date booking1_endDate = format.parse("2019-11-27");
+		// Make a booking
+		Booking booking1 = new Booking(booking1_startDate, booking1_endDate, 1, guestPeter, booking1_rooms);
 		bookingRepository.save(booking1);
+		// Assert
 		assertEquals(initialBookingsCount + 1, bookingRepository.findAll().size());
 	}
 }

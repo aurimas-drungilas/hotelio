@@ -11,7 +11,9 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Component
@@ -46,10 +48,16 @@ public class DataLoader implements ApplicationRunner {
         Guest guestJordan = new Guest("Jordan", "Davidson", 29);
         customerRepository.save(guestJordan);
 
+        // Make rooms array
         List<Room> booking1_rooms= new ArrayList<Room>();
         booking1_rooms.add(room404);
         booking1_rooms.add(room405);
-        Booking booking1 = new Booking("21/11/2019", "27/11/2019", 1, guestNiall, booking1_rooms);
+        // Make start and end dates
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd"); // Docs: http://tutorials.jenkov.com/java-date-time/parsing-formatting-dates.html
+        Date booking1_startDate = format.parse ("2019-11-21");
+        Date booking1_endDate = format.parse ("2019-11-27");
+        // Make a new booking
+        Booking booking1 = new Booking(booking1_startDate, booking1_endDate, 1, guestNiall, booking1_rooms);
         bookingRepository.save(booking1);
     }
 }
