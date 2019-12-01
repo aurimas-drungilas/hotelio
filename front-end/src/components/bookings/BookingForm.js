@@ -12,7 +12,7 @@ const BookingForm = (props) => {
             "numberOfPeople": event.target.numberOfPeople.value,
             "rooms": event.target.rooms.value
         }
-        props.handlePiratePost(booking);
+        props.onNewBooking(booking);
     
       }
 

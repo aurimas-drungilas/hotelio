@@ -5,6 +5,7 @@ import BookingForm from '../../components/bookings/BookingForm';
 class BookingFormContainer extends Component {
     constructor(props) {
         super(props);
+        this.handleNewBooking = this.handleNewBooking.bind(this);
     }
 
     handleNewBooking(booking){
@@ -16,7 +17,7 @@ class BookingFormContainer extends Component {
 
     render() { 
         return ( 
-            <BookingForm />
+            <BookingForm onNewBooking={this.handleNewBooking} />
          );
     }
 }
