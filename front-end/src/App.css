@@ -40,8 +40,9 @@
 }
 
 .wrapper {
+
   max-width: 250px;
-  background: #fff;
+  background: #222222;
   padding: 10px;
   align-content: center;
   margin-left: 75px;
