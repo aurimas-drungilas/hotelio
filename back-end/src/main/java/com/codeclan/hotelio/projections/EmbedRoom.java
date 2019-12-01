@@ -8,6 +8,7 @@ import java.util.List;
 
 @Projection(name = "embedRoom", types = Room.class)
 public interface EmbedRoom {
+    long getId();
     int getRoomNumber();
     int getCapacity();
     List<Booking> getBookings();

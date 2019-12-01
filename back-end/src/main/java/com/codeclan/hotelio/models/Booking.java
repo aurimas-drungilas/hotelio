@@ -12,7 +12,7 @@ import java.util.List;
 public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long Id;
     @Column(name = "start_date")
     private Date startDate;
     @Column(name = "end_date")
@@ -46,11 +46,11 @@ public class Booking {
     }
 
     public Long getId() {
-        return id;
+        return Id;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.Id = id;
     }
 
     public Date getStartDate() {

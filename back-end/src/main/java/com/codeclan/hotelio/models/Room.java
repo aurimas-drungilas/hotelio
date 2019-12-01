@@ -12,7 +12,7 @@ import java.util.List;
 public class Room {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long Id;
     @Column(name = "room_number")
     private int roomNumber;
     @Column(name = "capacity")
@@ -36,11 +36,11 @@ public class Room {
     }
 
     public Long getId() {
-        return id;
+        return Id;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.Id = id;
     }
 
     public int getRoomNumber() {
