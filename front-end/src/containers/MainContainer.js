@@ -10,23 +10,18 @@ import NavBar from '../NavBar';
 class MainContainer extends Component {
     render() { 
         return ( 
+            <Fragment>
             <div className="main-container">
-            <NavBar />
                 <Router>
-                    <Fragment>
-                        <Switch>
-                            <Route path="/calendars" component={CalendarContainer} />
-                            <Route path="/guests" component={GuestContainer} />
-                        </Switch>
-                        <Switch>
-                            <Route path="/rooms" component={RoomContainer} />
-                        </Switch>
-                        <Switch>
-                            <Route path="/bookings/new" component={BookingFormContainer} />
-                        </Switch>
-                    </Fragment>
+                    <Switch>
+                        <Route path="/calendars" component={CalendarContainer} />
+                        <Route path="/guests" component={GuestContainer} />
+                        <Route path="/rooms" component={RoomContainer} />
+                        <Route path="/bookings/new" component={BookingFormContainer} />
+                    </Switch>
                 </Router>
             </div>
+            </Fragment>
          );
     }
 }

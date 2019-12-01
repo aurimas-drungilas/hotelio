@@ -1,22 +1,30 @@
-import React from 'react';
-import { slide as Menu } from 'react-burger-menu';
+import React, { useState } from "react";
+import ReactOffcanvasComponent from "react-offcanvas-component";
+import { FaTimes } from "react-icons/fa";
+import './App.css';
 
-const NavBar = (props) => {
-    return ( 
-        <Menu>
-      <a className="menu-item" href="/calendars">
-        Calendars
-      </a>
+const { Menu, DropdownMenu } = ReactOffcanvasComponent;
 
-      <a className="menu-item" href="/guests">
-        Guests
-      </a>
+const MenuItem = Menu.Item;
 
-      <a className="menu-item" href="/rooms">
-        Rooms
-      </a>
-    </Menu>
-     );
+const NavBar = () => {
+    return (
+        <div>
+          <ReactOffcanvasComponent
+            className="wrapper"
+            open={true}
+          >
+            <div className="logo">
+            Hotelio
+            </div>
+            <Menu>
+              <MenuItem className="menu-item"><a href="/calendars">Calendars</a></MenuItem>
+              <MenuItem className="menu-item" ><a href="/guests">Guests</a></MenuItem>
+              <MenuItem className="menu-item" ><a href="/rooms">Rooms</a></MenuItem>
+            </Menu>
+          </ReactOffcanvasComponent>
+        </div>
+      );
 }
  
 export default NavBar;
