@@ -6,6 +6,7 @@ import interactionPlugin from "@fullcalendar/interaction";
 import listPlugin from '@fullcalendar/list';
 import resourceDayGridPlugin from '@fullcalendar/resource-daygrid';
 import resourceTimelinePlugin from '@fullcalendar/resource-timeline';
+import Request from '../../helpers/request';
 
 import "@fullcalendar/core/main.css";
 import "@fullcalendar/daygrid/main.css";
@@ -94,88 +95,88 @@ class CalendarContainer extends Component {
             ],
             resources: [
                 {
-                    id: 1,
-                    title: "Room 404",
+                    id: 404,
+                    title: "404",
                     capacity: 2
                 },
                 {
-                    id: 2,
-                    title: "Room 405",
+                    id: 405,
+                    title: "405",
                     capacity: 2
                 },
                 {
                     id: 3,
-                    title: "Room 406",
+                    title: "406",
                     capacity: 4
                 },
                 {
                     id: 4,
-                    title: "Room 405",
+                    title: "405",
                     capacity: 2
                 },
                 {
                     id: 5,
-                    title: "Room 406",
+                    title: "406",
                     capacity: 2
                 },
                 {
                     id: 6,
-                    title: "Room 407",
+                    title: "407",
                     capacity: 2
                 },
                 {
                     id: 7,
-                    title: "Room 408",
+                    title: "408",
                     capacity: 2
                 },
                 {
                     id: 8,
-                    title: "Room 409",
+                    title: "409",
                     capacity: 2
                 },
                 {
                     id: 9,
-                    title: "Room 410",
+                    title: "410",
                     capacity: 2
                 },
                 {
                     id: 2,
-                    title: "Room 411",
+                    title: "411",
                     capacity: 2
                 },
                 {
                     id: 10,
-                    title: "Room 412",
+                    title: "412",
                     capacity: 2
                 },
                 {
                     id: 11,
-                    title: "Room 413",
+                    title: "413",
                     capacity: 2
                 },
                 {
                     id: 12,
-                    title: "Room 414",
+                    title: "414",
                     capacity: 2
                 },
                 {
                     id: 13,
-                    title: "Room 415",
+                    title: "415",
                     capacity: 2
                 },
                 {
                     id: 14,
-                    title: "Room 416",
+                    title: "416",
                     capacity: 2
                 },
                 {
                     id: 15,
-                    title: "Room 417",
+                    title: "417",
                     capacity: 2
                 },
                 {
                     id: 16,
-                    title: "Room 418",
+                    title: "418",
                     capacity: 4
                 }
             ],
@@ -190,6 +191,50 @@ class CalendarContainer extends Component {
                 }
             ]
         }
+    }
+
+    componentDidMount() {
+        this.populateBookings();
+        this.populateRoomsList();
+    }
+
+    populateBookings() {
+        // AKA events
+        const request = new Request();
+        const url = '/api/bookings';
+        request.get(url)
+            .then(bookings => {
+                const formattedBookings = [];
+                for (const booking of bookings._embedded.bookings) {
+                    formattedBookings.push({
+                        id: booking.id,
+                        start: booking.startDate,
+                        end: booking.endDate,
+                        resourceIds: booking.rooms.map(room => room.roomNumber),
+                        allDay: true,
+                        title: booking.guest.firstName + ' ' + booking.guest.lastName + ' (' + booking.numberOfPeople + ')'
+                    });
+                }
+                this.setState({events: formattedBookings});
+            });
+    }
+
+    populateRoomsList() {
+        // AKA resources
+        const request = new Request();
+        const url = '/api/rooms';
+        request.get(url)
+            .then(rooms => {
+                const formattedRooms = [];
+                for (const room of rooms._embedded.rooms) {
+                    formattedRooms.push({
+                        id: room.roomNumber,
+                        title: room.roomNumber,
+                        capacity: room.capacity
+                    });
+                }
+                this.setState({resources: formattedRooms});
+            });
     }
 
     // Clicking on a specific date on the calendar
