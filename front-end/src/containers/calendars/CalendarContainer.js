@@ -210,7 +210,7 @@ class CalendarContainer extends Component {
                         id: booking.id,
                         start: booking.startDate,
                         end: booking.endDate,
-                        resourceIds: booking.rooms.map(room => room.roomNumber),
+                        resourceIds: booking.rooms.map(room => room.id),
                         allDay: true,
                         title: booking.guest.firstName + ' ' + booking.guest.lastName + ' (' + booking.numberOfPeople + ')'
                     });
@@ -228,7 +228,7 @@ class CalendarContainer extends Component {
                 const formattedRooms = [];
                 for (const room of rooms._embedded.rooms) {
                     formattedRooms.push({
-                        id: room.roomNumber,
+                        id: room.id,
                         title: room.roomNumber,
                         capacity: room.capacity
                     });
