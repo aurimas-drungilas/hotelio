@@ -15,12 +15,12 @@ const NavBar = () => {
             open={true}
           >
             <div className="logo">
-            Hotelio
+                <img src="./Hotelio_logo.png" alt="hotelio logo"/>
             </div>
             <Menu>
-              <MenuItem className="menu-item"><a href="/calendars">Calendars</a></MenuItem>
-              <MenuItem className="menu-item" ><a href="/guests">Guests</a></MenuItem>
-              <MenuItem className="menu-item" ><a href="/rooms">Rooms</a></MenuItem>
+              <MenuItem className="menu-item"><a href="/calendars">CALENDAR</a></MenuItem>
+              <MenuItem className="menu-item" ><a href="/guests">GUESTS</a></MenuItem>
+              <MenuItem className="menu-item" ><a href="/rooms">ROOMS</a></MenuItem>
             </Menu>
           </ReactOffcanvasComponent>
         </div>
