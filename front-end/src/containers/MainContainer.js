@@ -49,6 +49,7 @@ class MainContainer extends Component {
         return ( 
             <Fragment>
             <div className="main-container">
+                <a className="book-button" href="/bookings/new">Book</a>
                 <Router>
                     <Switch>
                         <Route exact path="/" component={CalendarContainer} />
