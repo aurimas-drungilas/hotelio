@@ -51,6 +51,7 @@ class MainContainer extends Component {
             <div className="main-container">
                 <Router>
                     <Switch>
+                        <Route path="/" component={CalendarContainer} />
                         <Route path="/calendars" component={CalendarContainer} />
                         <Route path="/guests" component={GuestContainer} />
                         <Route path="/rooms" component={RoomContainer} />
