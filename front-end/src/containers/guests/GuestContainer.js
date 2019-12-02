@@ -40,7 +40,7 @@ class GuestContainer extends Component {
 
     render() { 
         return ( 
-            <div className="component-container">
+            <div className="guest-container">
                 <Router>
                 <Fragment>
                     <Switch>

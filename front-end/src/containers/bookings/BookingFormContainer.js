@@ -16,8 +16,11 @@ class BookingFormContainer extends Component {
     }
 
     render() { 
-        return ( 
-            <BookingForm onNewBooking={this.handleNewBooking} />
+        return (
+            <div className="booking-form-container">
+                <h1>Booking Form</h1>
+                <BookingForm onNewBooking={this.handleNewBooking} />
+            </div>
          );
     }
 }

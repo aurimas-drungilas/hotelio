@@ -89,7 +89,7 @@ class BookingForm extends React.Component {
             <div className="booking-form">
                 <form onSubmit={this.handleNewBooking}>
                     <div className="booking-form__field">
-                        <p>Guest</p>
+                        <p>Guest:</p>
                         <select name="guest" defaultValue={''} required>
                             <option value={''} disabled={'disabled'}>Select a guest</option>
                             <option value={'new'} disabled>New guest</option>
@@ -98,29 +98,29 @@ class BookingForm extends React.Component {
                     </div>
 
                     <div className="booking-form__field">
-                        <p>Arrival date</p>
+                        <p>Arrival date:</p>
                         <input type="date" name="startDate" defaultValue={this.state.startDate} onChange={this.handleStartDateChange} required />
                     </div>
 
                     <div className="booking-form__field">
-                        <p>Departure date</p>
+                        <p>Departure date:</p>
                         <input type="date" name="endDate" defaultValue={this.state.endDate} onChange={this.handleEndDateChange}  required />
                     </div>
 
                     <div className="booking-form__field">
-                        <p>Number of People</p>
+                        <p>Number of People:</p>
                         <input type="number" name="numberOfPeople" defaultValue={this.state.numberOfPeople} onChange={this.handleNumberOfPeopleChange} required />
                     </div>
 
                     <div className="booking-form__field">
-                        <p>Available rooms</p>
+                        <p>Available rooms:</p>
                         <select name="rooms" size="5" multiple={true} required>
                             {availableRoomsOptions}
                         </select>
                     </div>
 
                     <div className="booking-form__submit">
-                        <button type="submit">Book</button>
+                        <button type="submit">BOOK</button>
                     </div>
                 </form>
             </div>
