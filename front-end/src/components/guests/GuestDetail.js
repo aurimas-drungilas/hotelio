@@ -8,19 +8,17 @@ const GuestDetail = (props) => {
     }
 
     const bookings = props.guest.bookings.map((booking, index) => {
+        const endDate = booking.endDate.toString().substring(0,10);
         return <div key={index}>
-                <p>Leaving on: {booking.endDate.toString().substring(0,10)}</p>
+                <p>Leaving on: {endDate}</p>
                 <p>Number of Guests: {booking.numberOfPeople}</p>
                 </div>
     })
 
     return ( 
         <div className="component">
-            <Guest guest={props.guest} />
-            <p>All Bookings: </p>
-            <div>
-                {bookings}
-            </div>
+            <h4>All bookings for {props.guest.firstName} {props.guest.lastName}: </h4>
+            {bookings}
         </div>
      );
 }
