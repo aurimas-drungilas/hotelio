@@ -11,7 +11,7 @@ class BookingEditContainer extends Component {
     handleBookingUpdate(booking){
         const request = new Request();
         request.patch('/api/bookings/' + this.props.booking.id, booking).then(() => {
-            window.location = 'api/bookings/' + this.props.booking.id
+            window.location = '/calendars'
         })
     }
 
