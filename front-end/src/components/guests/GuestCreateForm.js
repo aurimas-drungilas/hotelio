@@ -31,7 +31,7 @@ class GuestCreateForm extends React.Component {
                     </div>
                     <div>
                         <p>Age</p>
-                        <input type="number" name="age" />
+                        <input type="number" min="18"name="age" />
                     </div>
                     <div>
                         <input type="submit" />

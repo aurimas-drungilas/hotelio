@@ -26,7 +26,7 @@ class RoomCreateForm extends React.Component {
                     </div>
                     <div>
                         <p>Capacity</p>
-                        <input type="number" name="capacity" />
+                        <input type="number" name="capacity" min="1"/>
                     </div>
                     <div>
                         <input type="submit" />
