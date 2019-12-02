@@ -105,7 +105,7 @@ class CalendarContainer extends Component {
         //         })
         //     });
         // }
-    };
+    }
 
     fetchBookingById(id) {
         const request = new Request();
