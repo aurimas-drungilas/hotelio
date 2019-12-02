@@ -15,7 +15,7 @@ const NavBar = () => {
             open={true}
           >
             <div className="logo">
-                <img src="./Hotelio_logo.png" alt="hotelio logo"/>
+                <img src="/Hotelio_logo.png" alt="hotelio logo"/>
             </div>
             <Menu>
               <MenuItem className="menu-item"><a href="/calendars">CALENDAR</a></MenuItem>
