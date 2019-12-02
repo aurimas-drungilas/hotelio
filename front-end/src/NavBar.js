@@ -18,6 +18,7 @@ const NavBar = () => {
                 <img src="/Hotelio_logo.png" alt="hotelio logo"/>
             </div>
             <Menu>
+              <MenuItem className="menu-item"><a href="/bookings/new">BOOK</a></MenuItem>
               <MenuItem className="menu-item"><a href="/calendars">CALENDAR</a></MenuItem>
               <MenuItem className="menu-item" ><a href="/guests">GUESTS</a></MenuItem>
               <MenuItem className="menu-item" ><a href="/rooms">ROOMS</a></MenuItem>
