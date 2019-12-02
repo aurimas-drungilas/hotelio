@@ -12,6 +12,7 @@ import "@fullcalendar/core/main.css";
 import "@fullcalendar/daygrid/main.css";
 import "@fullcalendar/timeline/main.css";
 import "@fullcalendar/resource-timeline/main.css";
+import CalendarBookingDetailsModal from '../../components/calendars/CalendarBookingDetailsModal';
 
 
 class CalendarContainer extends Component {
@@ -38,8 +39,11 @@ class CalendarContainer extends Component {
                   labelText: 'Capacity',
                   field: 'capacity'
                 }
-            ]
+            ],
+            selectedBooking: null
         }
+        this.modalRef = React.createRef();
+        this.fetchBookingById = this.fetchBookingById.bind(this);
     }
 
     componentDidMount() {
@@ -103,9 +107,22 @@ class CalendarContainer extends Component {
         }
     };
 
+    fetchBookingById(id) {
+        const request = new Request();
+        const url = '/api/bookings/' + id;
+        return request.get(url);
+    }
+
     // Clicking on a specific booking
     handleEventClick = arg => {
-        alert('Event: ' + arg.event.title + '. This could redirect to the booking info page.');
+        console.dir(arg.event.id);
+        this.fetchBookingById(arg.event.id)
+            .then((json) => {
+                this.setState({selectedBooking: json})
+            })
+            .then(() => {
+                this.modalRef.current.showModal();
+            });
     };
 
     render() { 
@@ -122,6 +139,7 @@ class CalendarContainer extends Component {
                     resourceColumns={this.state.resourceColumns}
                     schedulerLicenseKey="GPL-My-Project-Is-Open-Source"
                     />
+                <CalendarBookingDetailsModal booking={this.state.selectedBooking} ref={this.modalRef} />
             </div>
          );
     }
