@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Request from '../../helpers/request';
 import GuestList from '../../components/guests/GuestList';
 import GuestCreateForm from '../../components/guests/GuestCreateForm';
-
+import GuestDetail from '../../components/guests/GuestDetail';
 
 class GuestContainer extends Component {
     constructor(props) {
@@ -12,6 +12,7 @@ class GuestContainer extends Component {
             guests: []
         }
         this.handleCreateGuest = this.handleCreateGuest.bind(this);
+        this.findGuestById = this.findGuestById.bind(this);
     }
 
     componentDidMount() {
@@ -31,7 +32,13 @@ class GuestContainer extends Component {
             .then(() => window.location = '/guests');
     }
 
-    render() {
+    findGuestById(id){
+        return this.state.guests.find((guest) => {
+            return guest.id === parseInt(id);
+        })
+    }
+
+    render() { 
         return ( 
             <div className="component-container">
                 <Router>
@@ -39,6 +46,11 @@ class GuestContainer extends Component {
                     <Switch>
                         <Route exact path="/guests/new" render={() => {
                             return <GuestCreateForm onCreateGuest={this.handleCreateGuest} />
+                        }} />
+                        <Route exact path="/guests/:id" render={(props) => {
+                            const id = props.match.params.id;
+                            const guest = this.findGuestById(id);
+                            return <GuestDetail guest={guest} />
                         }} />
                         <Route render={() => {
                             return <GuestList guests={this.state.guests} />
