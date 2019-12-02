@@ -1,6 +1,8 @@
 import React, {Fragment} from 'react'
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
+import BookingDetails from '../bookings/BookingDetails';
+import GuestDetail from '../guests/GuestDetail';
 
 class CalendarBookingDetailsModal extends React.Component {
 
@@ -11,6 +13,7 @@ class CalendarBookingDetailsModal extends React.Component {
         };
         this.showModal = this.showModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
+        this.editBooking = this.editBooking.bind(this);
     }
 
     showModal() {
@@ -24,21 +27,24 @@ class CalendarBookingDetailsModal extends React.Component {
             show: false
         });
     }
+    
+    editBooking() {
+        window.location = '/bookings/edit/' + this.props.booking.id;
+    }
 
     render() {
         if (!this.props.booking) return 'Loading...';
         return (
             <Fragment>
-                <Button variant="primary" onClick={this.showModal}>
-                    Launch demo modal
-                </Button>
-
                 <Modal show={this.state.show} onHide={this.closeModal} >
                     <Modal.Body>
-                        ID: {this.props.booking.id}
+                        <BookingDetails booking={this.props.booking} />
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button variant="primary" onClick={this.closeModal} >
+                        <Button variant="primary" onClick={this.editBooking} >
+                            Edit
+                        </Button>
+                        <Button variant="secondary" onClick={this.closeModal} >
                             Close
                         </Button>
                     </Modal.Footer>
