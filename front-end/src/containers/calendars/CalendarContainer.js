@@ -6,11 +6,13 @@ import interactionPlugin from "@fullcalendar/interaction";
 import listPlugin from '@fullcalendar/list';
 import resourceDayGridPlugin from '@fullcalendar/resource-daygrid';
 import resourceTimelinePlugin from '@fullcalendar/resource-timeline';
+import Request from '../../helpers/request';
 
 import "@fullcalendar/core/main.css";
 import "@fullcalendar/daygrid/main.css";
 import "@fullcalendar/timeline/main.css";
 import "@fullcalendar/resource-timeline/main.css";
+import CalendarBookingDetailsModal from '../../components/calendars/CalendarBookingDetailsModal';
 
 
 class CalendarContainer extends Component {
@@ -26,49 +28,8 @@ class CalendarContainer extends Component {
                 right: 'resourceTimelineMonth dayGridMonth listMonth dayGridWeek'
             },
             // @Docs: https://fullcalendar.io/docs/event-object
-            events: [
-                { 
-                    id: 1, 
-                    resourceId: 1, 
-                    title: 'Jordan\'s booking', 
-                    start: '2019-09-01', 
-                    end: '2019-11-09', 
-                    allDay: true 
-                },
-                { 
-                    id: 2, 
-                    resourceId: 3, 
-                    title: 'Nial\'s booking', 
-                    start: '2019-11-02', 
-                    end: '2019-11-25', 
-                    allDay: true 
-                },
-                { 
-                    id: 3, 
-                    resourceId: 3, 
-                    title: 'Nial\'s 2nd booking', 
-                    start: '2019-11-03', 
-                    end: '2019-12-09', 
-                    allDay: true 
-                }
-            ],
-            resources: [
-                {
-                    id: 1,
-                    title: "Room 404",
-                    capacity: 2
-                },
-                {
-                    id: 2,
-                    title: "Room 405",
-                    capacity: 2
-                },
-                {
-                    id: 3,
-                    title: "Room 406",
-                    capacity: 4
-                }
-            ],
+            events: [],
+            resources: [],
             resourceColumns: [
                 {
                   labelText: 'Room',
@@ -78,31 +39,90 @@ class CalendarContainer extends Component {
                   labelText: 'Capacity',
                   field: 'capacity'
                 }
-              ]
+            ],
+            selectedBooking: null
         }
+        this.modalRef = React.createRef();
+        this.fetchBookingById = this.fetchBookingById.bind(this);
+    }
+
+    componentDidMount() {
+        this.populateBookings();
+        this.populateRoomsList();
+    }
+
+    populateBookings() {
+        // AKA events
+        const request = new Request();
+        const url = '/api/bookings?size=1000';
+        request.get(url)
+            .then(bookings => {
+                const formattedBookings = [];
+                for (const booking of bookings._embedded.bookings) {
+                    formattedBookings.push({
+                        id: booking.id,
+                        start: booking.startDate,
+                        end: booking.endDate,
+                        resourceIds: booking.rooms.map(room => room.id),
+                        allDay: true,
+                        title: booking.guest.firstName + ' ' + booking.guest.lastName + ' (' + booking.numberOfPeople + ')'
+                    });
+                }
+                this.setState({events: formattedBookings});
+            });
+    }
+
+    populateRoomsList() {
+        // AKA resources
+        const request = new Request();
+        const url = '/api/rooms';
+        request.get(url)
+            .then(rooms => {
+                const formattedRooms = [];
+                for (const room of rooms._embedded.rooms) {
+                    formattedRooms.push({
+                        id: room.id,
+                        title: room.roomNumber,
+                        capacity: room.capacity
+                    });
+                }
+                this.setState({resources: formattedRooms});
+            });
     }
 
     // Clicking on a specific date on the calendar
     handleDateClick = arg => {
-        if (window.confirm("Would you like to add an event to " + arg.dateStr + " ?")) {
-            this.setState({
-                // add new event data
-                events: this.state.events.concat({
-                    // creates a new array
-                    title: "New Booking",
-                    // TODO: look up how to get resourceId from the arg
-                    resourceId: 2, 
-                    start: arg.date,
-                    end: arg.date,
-                    allDay: true
-                })
-            });
-        }
+        // if (window.confirm("Would you like to add an event to " + arg.dateStr + " ?")) {
+        //     this.setState({
+        //         // add new event data
+        //         events: this.state.events.concat({
+        //             title: "New Booking",
+        //             // ResourceIds should come from what rooms are selected during the new booking process.
+        //             resourceIds: [2], 
+        //             start: arg.date,
+        //             end: arg.date,
+        //             allDay: true
+        //         })
+        //     });
+        // }
     };
 
-    // Clicking on a specific bookings
+    fetchBookingById(id) {
+        const request = new Request();
+        const url = '/api/bookings/' + id;
+        return request.get(url);
+    }
+
+    // Clicking on a specific booking
     handleEventClick = arg => {
-        alert('Event: ' + arg.event.title + '. This could redirect to the booking info page.');
+        console.dir(arg.event.id);
+        this.fetchBookingById(arg.event.id)
+            .then((json) => {
+                this.setState({selectedBooking: json})
+            })
+            .then(() => {
+                this.modalRef.current.showModal();
+            });
     };
 
     render() { 
@@ -117,7 +137,9 @@ class CalendarContainer extends Component {
                     dateClick={this.handleDateClick}
                     resources={this.state.resources}
                     resourceColumns={this.state.resourceColumns}
+                    schedulerLicenseKey="GPL-My-Project-Is-Open-Source"
                     />
+                <CalendarBookingDetailsModal booking={this.state.selectedBooking} ref={this.modalRef} />
             </div>
          );
     }

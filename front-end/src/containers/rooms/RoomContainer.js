@@ -2,6 +2,8 @@ import React, { Component, Fragment } from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Request from '../../helpers/request';
 import RoomList from '../../components/rooms/RoomList';
+import RoomCreateForm from '../../components/rooms/RoomCreateForm';
+import RoomDetail from '../../components/rooms/RoomDetail';
 
 class RoomContainer extends Component {
     constructor(props) {
@@ -9,6 +11,7 @@ class RoomContainer extends Component {
         this.state = { 
             rooms: []
          }
+         this.findRoomById = this.findRoomById.bind(this);
     }
 
     componentDidMount() {
@@ -21,12 +24,33 @@ class RoomContainer extends Component {
         })
     }
 
+    handleCreateRoom(room) {
+        const request = new Request();
+        const url = '/api/rooms';
+        request.post(url, room)
+            .then(() => window.location = '/rooms');
+    }
+
+    findRoomById(id){
+        return this.state.rooms.find((room) => {
+            return room.id === parseInt(id);
+        })
+    }
+
     render() { 
         return ( 
             <div className="component-container">
             <Router>
                 <Fragment>
                     <Switch>
+                        <Route exact path="/rooms/new" render={() => {
+                            return <RoomCreateForm onCreateRoom={this.handleCreateRoom} />
+                        }} />
+                        <Route exact path="/rooms/:id" render={(props) => {
+                            const id = props.match.params.id;
+                            const room = this.findRoomById(id);
+                            return <RoomDetail room={room} />
+                        }} />
                         <Route render={() => {
                             return <RoomList rooms={this.state.rooms} />
                         }} />
@@ -35,7 +59,7 @@ class RoomContainer extends Component {
             </Router>
                 
             </div>
-         );
+        );
     }
 }
  

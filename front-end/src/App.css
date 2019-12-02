@@ -1,5 +1,8 @@
 .App {
+  font-family: 'Archivo Black', sans-serif;
   text-align: center;
+  display: flex;
+  flex-direction: row;
 }
 
 .App-logo {
@@ -20,3 +23,63 @@
 .App-link {
   color: #09d3ac;
 }
+
+.test-box{
+  display: flex;
+}
+
+.sidebar{
+  width: 200px;
+}
+
+.main{
+  flex: 83%;
+}
+
+.main-container{
+  padding: 40px;
+}
+
+.wrapper {
+  max-width: 250px;
+  background: #222222;
+  align-content: center;
+  margin-left: 75px;
+}
+.menu-item a {
+  display: block;
+  padding: 30px;
+  color: white;
+  font-size: 20px;
+}
+.menu-item a:hover {
+  background: #333333;
+  color: #ffffff;
+  text-decoration: none;
+}
+.menu-item {
+}
+.dropdown {
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+.dropdown-item {
+  padding: 10px;
+  margin-top: 20px;
+  background: #e2e2e2;
+}
+.logo {
+  color: white;
+  font-size: 34px;
+}
+.logo img {
+  padding-top: 20px;
+  margin-bottom: 25px;
+  width: 180px;
+}
+
+.component-list{
+  list-style: none;
+}
+
+

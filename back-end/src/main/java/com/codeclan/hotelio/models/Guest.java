@@ -12,7 +12,7 @@ import java.util.List;
 public class Guest {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long Id;
     @Column(name = "first_name")
     private String firstName;
     @Column(name = "last_name")
@@ -35,11 +35,11 @@ public class Guest {
     }
 
     public Long getId() {
-        return id;
+        return Id;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.Id = id;
     }
 
     public String getFirstName() {

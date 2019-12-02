@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -11,11 +12,11 @@ import java.util.List;
 public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long Id;
     @Column(name = "start_date")
-    private String startDate;
+    private Date startDate;
     @Column(name = "end_date")
-    private String endDate;
+    private Date endDate;
     @Column(name = "number_of_people")
     private int numberOfPeople;
     @JsonIgnoreProperties("bookings")
@@ -33,9 +34,9 @@ public class Booking {
     )
     private List<Room> rooms;
 
-    public Booking(String start, String end, int numberOfPeople, Guest guest, List<Room> rooms) {
-        this.startDate = start;
-        this.endDate = end;
+    public Booking(Date startDate, Date endDate, int numberOfPeople, Guest guest, List<Room> rooms) {
+        this.startDate = startDate;
+        this.endDate = endDate;
         this.numberOfPeople = numberOfPeople;
         this.guest = guest;
         this.rooms = rooms;
@@ -45,26 +46,26 @@ public class Booking {
     }
 
     public Long getId() {
-        return id;
+        return Id;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.Id = id;
     }
 
-    public String getStartDate() {
+    public Date getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(String startDate) {
+    public void setStartDate(Date startDate) {
         this.startDate = startDate;
     }
 
-    public String getEndDate() {
+    public Date getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(String endDate) {
+    public void setEndDate(Date endDate) {
         this.endDate = endDate;
     }
 
