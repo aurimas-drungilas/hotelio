@@ -92,19 +92,19 @@ class CalendarContainer extends Component {
 
     // Clicking on a specific date on the calendar
     handleDateClick = arg => {
-        if (window.confirm("Would you like to add an event to " + arg.dateStr + " ?")) {
-            this.setState({
-                // add new event data
-                events: this.state.events.concat({
-                    title: "New Booking",
-                    // ResourceIds should come from what rooms are selected during the new booking process.
-                    resourceIds: [2], 
-                    start: arg.date,
-                    end: arg.date,
-                    allDay: true
-                })
-            });
-        }
+        // if (window.confirm("Would you like to add an event to " + arg.dateStr + " ?")) {
+        //     this.setState({
+        //         // add new event data
+        //         events: this.state.events.concat({
+        //             title: "New Booking",
+        //             // ResourceIds should come from what rooms are selected during the new booking process.
+        //             resourceIds: [2], 
+        //             start: arg.date,
+        //             end: arg.date,
+        //             allDay: true
+        //         })
+        //     });
+        // }
     };
 
     fetchBookingById(id) {
