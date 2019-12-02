@@ -29,7 +29,7 @@
 }
 
 .sidebar{
-  flex: 15%;
+  width: 200px;
 }
 
 .main{
