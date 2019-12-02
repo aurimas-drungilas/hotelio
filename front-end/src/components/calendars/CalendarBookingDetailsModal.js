@@ -33,7 +33,7 @@ class CalendarBookingDetailsModal extends React.Component {
     }
 
     render() {
-        if (!this.props.booking) return 'Loading...';
+        if (!this.props.booking) return null;
         return (
             <Fragment>
                 <Modal show={this.state.show} onHide={this.closeModal} >
