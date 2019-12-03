@@ -1,5 +1,6 @@
 body {
     color: #222222 !important;
+    user-select: none;
 }
 
 .fc-center h2 {
@@ -8,6 +9,7 @@ body {
     margin-right: 15px !important;
     margin-left: 15px !important;
 }
+
 .fc-next-button {
     text-transform: uppercase !important;
     background-color: #ffaf5b !important;
@@ -30,13 +32,11 @@ body {
 
 .fc-center {
     display: flex;
-    flex-direction: row;
 }
 
 .App {
     font-family: 'Archivo Black', sans-serif;
     display: flex;
-    flex-direction: row;
 }
 
 .App-logo {
@@ -122,141 +122,142 @@ body {
 }
 
 .ReactOffcanvasComponent-module_wrapper__2pom- {
-  text-align: center;
+    text-align: center;
 }
 
 /*Styles relating to booking form*/
 .booking-form {
-  padding: 20px;
-  padding-top: 30px;
+    padding: 20px;
+    padding-top: 30px;
 }
 
 .booking-form-container {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .booking-form-container h1 {
-  align-self: center;
-  margin-bottom: 20px;
+    align-self: center;
+    margin-bottom: 20px;
 }
 
 .booking-form {
-  display: flex;
-  align-self: center;
-  justify-content: center;
-  background-color: #09d3ac;
-  border-radius: 15px;
-  width: 500px;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    background-color: #09d3ac;
+    border-radius: 15px;
+    width: 500px;
 }
 
 .booking-form__field {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
 }
 
 .booking-form__field p {
-  margin-bottom: 0;
-  margin-right: 1rem;
-  width: 180px;
+    margin-bottom: 0;
+    margin-right: 1rem;
+    width: 180px;
 }
 
 .booking-form__field input {
-  color: #222222;
-  font-family: Roboto;
-  padding-left: 5px;
-  box-shadow: none !important;
-  border: 0;
+    color: #222222;
+    font-family: Roboto;
+    padding-left: 5px;
+    box-shadow: none !important;
+    border: 0;
 }
 
 .booking-form__field select {
-  color: #222222;
-  font-family: Roboto;
+    color: #222222;
+    font-family: Roboto;
 }
 
 .booking-form__submit {
-  display: flex;
-  justify-content: center;
-  padding-top: 40px;
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
 }
+
 .booking-form__submit button {
-  font-size: 24px;
-  width: 150px !important;
-  height: 45px !important;
-  text-transform: uppercase !important;
-  border: none;
-  border-radius: 15px !important;
-  background-color: #ff5086;
-  color: white;
-  box-shadow: 1px 1px 3px #ff3b6b;
+    font-size: 24px;
+    width: 150px !important;
+    height: 45px !important;
+    text-transform: uppercase !important;
+    border: none;
+    border-radius: 15px !important;
+    background-color: #ff5086;
+    color: white;
+    box-shadow: 1px 1px 3px #ff3b6b;
 }
 
 .booking-form__submit button:hover {
-  background-color: #ff5086;
-  box-shadow: 1px 1px 6px inset #666666;
+    background-color: #ff5086;
+    box-shadow: 1px 1px 6px inset #666666;
 }
+
 .room-numbers {
-  text-align: center;
-  width: 170px;
+    text-align: center;
+    width: 170px;
 }
 
 .booking-form-edit-container {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .booking-form-edit-container h1 {
-  align-self: center;
-  margin-bottom: 20px;
+    align-self: center;
+    margin-bottom: 20px;
 }
 
 .room-detail-component {
-  display: flex;
-  flex-direction: row;
+    display: flex;
 }
 
 /*Styles for the guests*/
 
 .guest-container {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
+
 .guest-container h1 {
-  align-self: center;
-  margin-bottom: 20px;
+    align-self: center;
+    margin-bottom: 20px;
 
 }
 
 .new-guest-button-container {
-  display: flex;
-  justify-content: center;
-  padding-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
 }
 
 .add-btn {
-  font-size: 24px;
-  width: 300px !important;
-  height: 45px !important;
-  text-transform: uppercase !important;
-  border: none;
-  border-radius: 15px !important;
-  background-color: #ffaf5b;
-  color: white;
-  box-shadow: 1px 1px 3px #fb9d4f;
+    font-size: 24px;
+    width: 300px !important;
+    height: 45px !important;
+    text-transform: uppercase !important;
+    border: none;
+    border-radius: 15px !important;
+    background-color: #ffaf5b;
+    color: white;
+    box-shadow: 1px 1px 3px #fb9d4f;
 }
 
 .add-btn:hover {
-  background-color: #ffaf5b;
-  box-shadow: 1px 1px 3px inset #fb9d4f;
+    background-color: #ffaf5b;
+    box-shadow: 1px 1px 3px inset #fb9d4f;
 }
 
 .component-list {
-  display: flex;
-  justify-content: center;
-  /*justify-content: space-between;*/
-  flex-direction: row;
-  flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    /*justify-content: space-between;*/
+    flex-wrap: wrap;
 }
 
 .tagline {
@@ -266,71 +267,71 @@ body {
 }
 
 .guest-detail {
-  background-color: #09d3ac;
-  border-radius: 15px;
-  padding: 20px;
-  width: 250px;
-  height: 140px;
-  margin-bottom: 20px;
-  margin-right: 20px;
-  /*box-shadow: 1px 1px 3px #a9a9a9;*/
+    background-color: #09d3ac;
+    border-radius: 15px;
+    padding: 20px;
+    width: 250px;
+    height: 140px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    /*box-shadow: 1px 1px 3px #a9a9a9;*/
 }
 
 .guest-detail a {
-  color: #222222;
+    color: #222222;
 }
 
 .guest-detail a:hover {
-  font-size: 17px;
-  color: #222222;
-  text-decoration: none;
+    font-size: 17px;
+    color: #222222;
+    text-decoration: none;
 }
 
 .booking-form__submit input {
-  font-size: 24px;
-  width: 150px !important;
-  height: 45px !important;
-  text-transform: uppercase !important;
-  border: none;
-  border-radius: 15px !important;
-  background-color: #ff5086;
-  color: white;
-  box-shadow: 1px 1px 3px #ff3b6b;
+    font-size: 24px;
+    width: 150px !important;
+    height: 45px !important;
+    text-transform: uppercase !important;
+    border: none;
+    border-radius: 15px !important;
+    background-color: #ff5086;
+    color: white;
+    box-shadow: 1px 1px 3px #ff3b6b;
 }
 
 .booking-form__submit input:hover {
-  background-color: #ff5086;
-  box-shadow: 1px 1px 6px inset #666666;
+    background-color: #ff5086;
+    box-shadow: 1px 1px 6px inset #666666;
 }
 
 .create-form {
-  display: flex;
-  align-self: center;
-  justify-content: center;
-  background-color: #74bbf4;
-  border-radius: 15px;
-  /*width: 400px;*/
-  padding: 20px;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    background-color: #74bbf4;
+    border-radius: 15px;
+    /*width: 400px;*/
+    padding: 20px;
 }
 
 .create-form-element {
-  display: flex;
-  flex-direction: row;
-  padding: 10px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
 }
 
 .create-form-element p {
-  padding-right: 10px;
+    padding-right: 10px;
+    margin-bottom: 0;
 }
 
 .create-form-age {
-  display: flex;
-  flex-direction: row;
-  padding: 10px;
+    display: flex;
+    padding: 10px;
 }
 
-.create-form-age p{
-  padding-right: 70px;
+.create-form-age p {
+    padding-right: 70px;
 }
 
 .details {
@@ -343,13 +344,16 @@ body {
     border-radius: 15px;
     width: 500px;
 }
-.details h4{
+
+.details h4 {
     align-self: center;
 }
+
 .guest-stay-info {
     padding-top: 20px;
 }
-.guest-stay-info p{
+
+.guest-stay-info p {
     margin-bottom: 5px;
 }
 
@@ -402,7 +406,7 @@ body {
     color: #222222;
 }
 
-.pie-chart h1{
+.pie-chart h1 {
     display: flex;
     justify-content: center;
 }
@@ -418,7 +422,7 @@ body {
     margin-bottom: 30px;
 }
 
-.rooms-container h1{
+.rooms-container h1 {
     display: flex;
     justify-content: center;
     margin-bottom: 25px;
