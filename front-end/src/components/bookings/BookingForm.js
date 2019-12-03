@@ -7,6 +7,7 @@ class BookingForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            rooms: [],
             availableRooms: [],
             selectedRooms: [],
             availableGuests: [],
@@ -16,7 +17,8 @@ class BookingForm extends React.Component {
             numberOfPeople: 2
         };
         this.handleNewBooking = this.handleNewBooking.bind(this);
-        this.populateAvailableRooms = this.populateAvailableRooms.bind(this);
+        this.populateRooms = this.populateRooms.bind(this);
+        this.filterAvailableRooms = this.filterAvailableRooms.bind(this);
         this.populateAvailableGuests = this.populateAvailableGuests.bind(this);
         this.handleStartDateChange = this.handleStartDateChange.bind(this);
         this.handleEndDateChange = this.handleEndDateChange.bind(this);
@@ -26,17 +28,33 @@ class BookingForm extends React.Component {
     }
 
     componentDidMount() {
-        this.populateAvailableRooms();
+        this.populateRooms();
         this.populateAvailableGuests();
     }
 
-    populateAvailableRooms() {
-        // TODO: only show actually available rooms.
-        // TODO: refresh this when the date gets updated.
+    populateRooms() {
         const request = new Request();
         const url = '/api/rooms?size=1000';
         request.get(url)
-            .then(json => this.setState({availableRooms: json._embedded.rooms}));
+            .then(json => this.setState({rooms: json._embedded.rooms}))
+            .then(() => this.filterAvailableRooms());
+    }
+
+    filterAvailableRooms() {
+        const rooms = this.state.rooms.filter((room) => {
+            return !room.bookings.find((booking) => {
+                const selectedStartDate = new Date(this.state.startDate);
+                const selectedEndDate = new Date(this.state.endDate);
+                const bookingStartDate = new Date(booking.startDate);
+                const bookingEndDate = new Date(booking.endDate).getTime();
+                if ((selectedStartDate >= bookingStartDate && selectedStartDate < bookingEndDate) || 
+                    (selectedEndDate > bookingStartDate && selectedEndDate <= bookingEndDate)) {
+                    return true;
+                } 
+                return false;
+            });
+        });
+        this.setState({availableRooms: rooms});
     }
 
     populateAvailableGuests() {
@@ -84,10 +102,21 @@ class BookingForm extends React.Component {
 
     handleStartDateChange(event) {
         console.log(event.target.value);
+        this.setState({
+            startDate: event.target.value
+        }, () => {
+            this.filterAvailableRooms();
+        });
     }
 
     handleEndDateChange(event) {
         console.log(event.target.value);
+        this.setState({
+            endDate: event.target.value
+        }, () => {
+            this.filterAvailableRooms();
+        });
+        
     }
 
     handleNumberOfPeopleChange(event) {
