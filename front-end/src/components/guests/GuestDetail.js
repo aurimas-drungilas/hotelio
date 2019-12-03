@@ -42,12 +42,12 @@ const GuestDetail = (props) => {
             
         // Print statement dependant on previous or current
         if (difference >= 0){
-            return <div key={index}>
+            return <div className={"guest-stay-info"} key={index}>
                 <p>Leaving on: {endDate}</p>
                 <p>Number of Guests: {booking.numberOfPeople}</p>
                 </div>
         } else {
-            return <div key={index}>
+            return <div className={"guest-stay-info"} key={index}>
                 <p>Checked out: {endDate}</p>
                 <p>Number of Guests: {booking.numberOfPeople}</p>
                 </div>
@@ -56,7 +56,7 @@ const GuestDetail = (props) => {
     })
 
     return ( 
-        <div className="component">
+        <div className="guest-details">
             <h4>All bookings for {props.guest.firstName} {props.guest.lastName}: </h4>
             {bookings}
         </div>

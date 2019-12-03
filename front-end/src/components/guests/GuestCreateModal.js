@@ -48,10 +48,10 @@ class CalendarBookingDetailsModal extends React.Component {
         return (
             <Fragment>
                 <Modal show={this.state.show} onHide={this.closeModal} >
-                    <Modal.Body>
+                    <Modal.Body className="pop-up" >
                         <GuestCreateForm onCreateGuest={this.handleCreateGuest} />
                     </Modal.Body>
-                    <Modal.Footer>
+                    <Modal.Footer className="pop-up" >
                         <Button variant="secondary" onClick={this.closeModal} >
                             Close
                         </Button>
