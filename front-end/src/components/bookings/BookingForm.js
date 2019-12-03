@@ -65,7 +65,6 @@ class BookingForm extends React.Component {
     startAndEndDatesValid() {
         const startDate = new Date(this.state.startDate);
         const endDate = new Date(this.state.endDate);
-        debugger;
         if (endDate > startDate) {
             return true;
         }
