@@ -18,17 +18,17 @@ class RoomCreateForm extends React.Component {
 
     render() { 
         return (  
-            <div className="room-create-form">
+            <div className="create-form">
                 <form onSubmit={this.handleCreateRoom}>
-                    <div>
+                    <div className={"create-form-element"}>
                         <p>Room Number</p>
                         <input type="number" name="roomNumber" />
                     </div>
-                    <div>
+                    <div className={"create-form-element capacity"}>
                         <p>Capacity</p>
-                        <input type="number" name="capacity" />
+                        <input type="number" name="capacity" min="1"/>
                     </div>
-                    <div>
+                    <div className={"booking-form__submit"}>
                         <input type="submit" />
                     </div>
                 </form>

@@ -9,11 +9,13 @@ const Room = (props) => {
 
     const url = "/rooms/" + props.room.id;
 
-    return ( 
+    return (
+        <div className={"guest-detail"}>
         <Fragment>
             <Link to={url} className="name">Room Number: {props.room.roomNumber}</Link>
             <p>Room Capacity: {props.room.capacity}</p>
         </Fragment>
+        </div>
      );
 }
  

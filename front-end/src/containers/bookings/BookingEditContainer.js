@@ -16,13 +16,17 @@ class BookingEditContainer extends Component {
     }
 
     render() { 
-        return ( 
-            <BookingEditForm
-            booking={this.props.booking}
-            guests={this.props.guests}
-            rooms={this.props.rooms}
-            handleBookingUpdate={this.handleBookingUpdate}
-            />
+        return (
+            <div className={"booking-form-edit-container"}>
+                <h1>Update Guests Booking</h1>
+                <BookingEditForm
+                    booking={this.props.booking}
+                    guests={this.props.guests}
+                    rooms={this.props.rooms}
+                    handleBookingUpdate={this.handleBookingUpdate}
+                />
+            </div>
+
          );
     }
 }

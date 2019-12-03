@@ -16,7 +16,7 @@ const RoomDetail = (props) => {
     })
 
     return ( 
-        <div className="component">
+        <div className="details">
         <h4>Bookings for room {props.room.roomNumber}: </h4>
         {bookings}
         </div>

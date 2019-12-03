@@ -7,6 +7,7 @@ import BookingFormContainer from './bookings/BookingFormContainer';
 import NavBar from '../NavBar';
 import BookingEditContainer from './bookings/BookingEditContainer';
 import Request from '../helpers/request';
+import ReportContainer from './reports/ReportContainer';
 
 
 class MainContainer extends Component {
@@ -49,7 +50,6 @@ class MainContainer extends Component {
         return ( 
             <Fragment>
             <div className="main-container">
-                <a className="book-button" href="/bookings/new">Book</a>
                 <Router>
                     <Switch>
                         <Route exact path="/" component={CalendarContainer} />
@@ -62,6 +62,7 @@ class MainContainer extends Component {
                             const booking = this.findBookingById(id);
                             return <BookingEditContainer booking={booking} guests={this.state.guests} rooms={this.state.rooms} />
                         }} />
+                        <Route path="/reports" component={ReportContainer} />
                     </Switch>
                 </Router>
             </div>

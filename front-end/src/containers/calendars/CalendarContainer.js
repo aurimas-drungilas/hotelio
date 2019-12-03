@@ -23,9 +23,16 @@ class CalendarContainer extends Component {
             defaultView: 'resourceTimelineMonth',
             // @Docs: https://fullcalendar.io/docs/header
             header: {
-                left: 'today prev next',
-                center: 'title',
-                right: 'resourceTimelineMonth dayGridMonth listMonth dayGridWeek'
+                left: 'today',
+                center: 'prev title next',
+                right: 'resourceTimelineMonth listMonth dayGridWeek'
+            },
+            buttonText: {
+                prev:     'Prev',
+                next:     'Next',
+                today:    'Today',
+                resourceTimelineMonth: 'Month',
+                listMonth: 'List'
             },
             // @Docs: https://fullcalendar.io/docs/event-object
             events: [],
@@ -75,7 +82,7 @@ class CalendarContainer extends Component {
     populateRoomsList() {
         // AKA resources
         const request = new Request();
-        const url = '/api/rooms';
+        const url = '/api/rooms?size=100';
         request.get(url)
             .then(rooms => {
                 const formattedRooms = [];
@@ -127,8 +134,8 @@ class CalendarContainer extends Component {
 
     render() { 
         return (
-            <div className="component-container">
-                <FullCalendar 
+            <div className="calendar-container">
+                <FullCalendar
                     defaultView={this.state.defaultView} 
                     header={this.state.header}
                     plugins={[dayGridPlugin, interactionPlugin, listPlugin, resourceDayGridPlugin, resourceTimelinePlugin]}
@@ -138,6 +145,12 @@ class CalendarContainer extends Component {
                     resources={this.state.resources}
                     resourceColumns={this.state.resourceColumns}
                     schedulerLicenseKey="GPL-My-Project-Is-Open-Source"
+                    buttonText={this.state.buttonText}
+                    eventBackgroundColor={'#09d3ac'}
+                    eventBorderColor={'#09d3ac'}
+                    resourceAreaWidth={'240px'}
+                    contentHeight={410}
+                    timeGridEventMinHeight={100}
                     />
                 <CalendarBookingDetailsModal booking={this.state.selectedBooking} ref={this.modalRef} />
             </div>

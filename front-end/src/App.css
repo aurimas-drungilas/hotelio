@@ -1,3 +1,37 @@
+body {
+    color: #222222 !important;
+}
+
+.fc-center h2 {
+    font-size: 40px !important;
+    color: #222222 !important;
+    margin-right: 15px !important;
+    margin-left: 15px !important;
+}
+.fc-next-button {
+    text-transform: uppercase !important;
+    background-color: #ffaf5b !important;
+    color: white;
+    border-radius: 15px !important;
+    border: 0 !important;
+    box-shadow: 1px 1px 3px #fb9d4f;
+    margin: 0 !important;
+}
+
+.fc-prev-button {
+    text-transform: uppercase !important;
+    background-color: #ffaf5b !important;
+    color: white;
+    border-radius: 15px !important;
+    border: 0 !important;
+    box-shadow: 1px 1px 3px #fb9d4f;
+    margin: 0 !important;
+}
+
+.fc-center {
+    display: flex;
+    flex-direction: row;
+}
 .fc-center h2 {
   font-size: 40px !important;
   color: #222222 !important;
@@ -5,89 +39,415 @@
 
 
 .App {
-  font-family: 'Archivo Black', sans-serif;
+    font-family: 'Archivo Black', sans-serif;
+    display: flex;
+    flex-direction: row;
+}
+
+.App-logo {
+    height: 40vmin;
+}
+
+.App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.App-link {
+    color: #09d3ac;
+}
+
+.sidebar {
+    width: 250px;
+}
+
+.main {
+    flex: 83%;
+}
+
+.main-container {
+    padding: 30px;
+}
+
+.wrapper {
+    max-width: 250px;
+    background: #222222;
+    align-content: center;
+    margin-left: 100px;
+}
+
+.menu-item a {
+    display: block;
+    padding: 30px;
+    color: white;
+    font-size: 20px;
+}
+
+.menu-item a:hover {
+    background: #333333;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.dropdown {
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.dropdown-item {
+    padding: 10px;
+    margin-top: 20px;
+    background: #e2e2e2;
+}
+
+.logo {
+    color: white;
+    font-size: 34px;
+}
+
+.logo img {
+    padding-top: 20px;
+    margin-bottom: 25px;
+    width: 180px;
+}
+
+.component-list {
+    list-style: none;
+}
+
+.room-create-form {
+    display: flex !important;
+    justify-content: space-around !important;
+}
+
+.ReactOffcanvasComponent-module_wrapper__2pom- {
   text-align: center;
+}
+
+/*Styles relating to booking form*/
+.booking-form {
+  padding: 20px;
+  padding-top: 30px;
+}
+
+.booking-form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.booking-form-container h1 {
+  align-self: center;
+  margin-bottom: 20px;
+}
+
+.booking-form {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  background-color: #09d3ac;
+  border-radius: 15px;
+  width: 500px;
+}
+
+.booking-form__field {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.booking-form__field p {
+  margin-bottom: 0;
+  margin-right: 1rem;
+  width: 180px;
+}
+
+.booking-form__field input {
+  color: #222222;
+  font-family: Roboto;
+  padding-left: 5px;
+  box-shadow: none !important;
+  border: 0;
+}
+
+.booking-form__field select {
+  color: #222222;
+  font-family: Roboto;
+}
+
+.booking-form__submit {
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+}
+.booking-form__submit button {
+  font-size: 24px;
+  width: 150px !important;
+  height: 45px !important;
+  text-transform: uppercase !important;
+  border: none;
+  border-radius: 15px !important;
+  background-color: #ff5086;
+  color: white;
+  box-shadow: 1px 1px 3px #ff3b6b;
+}
+
+.booking-form__submit button:hover {
+  background-color: #ff5086;
+  box-shadow: 1px 1px 6px inset #666666;
+}
+.room-numbers {
+  text-align: center;
+  width: 170px;
+}
+
+.booking-form-edit-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.booking-form-edit-container h1 {
+  align-self: center;
+  margin-bottom: 20px;
+}
+
+.room-detail-component {
   display: flex;
   flex-direction: row;
 }
 
-.App-logo {
-  height: 40vmin;
-}
+/*Styles for the guests*/
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.guest-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.guest-container h1 {
+  align-self: center;
+  margin-bottom: 20px;
+
 }
 
-.App-link {
-  color: #09d3ac;
-}
-
-.test-box{
+.new-guest-button-container {
   display: flex;
+  justify-content: center;
+  padding-bottom: 30px;
 }
 
-.sidebar{
-  width: 200px;
-}
-
-.main{
-  flex: 83%;
-}
-
-.main-container{
-  padding: 40px;
-}
-
-.wrapper {
-  max-width: 250px;
-  background: #222222;
-  align-content: center;
-  margin-left: 75px;
-}
-.menu-item a {
-  display: block;
-  padding: 30px;
+.add-btn {
+  font-size: 24px;
+  width: 300px !important;
+  height: 45px !important;
+  text-transform: uppercase !important;
+  border: none;
+  border-radius: 15px !important;
+  background-color: #ffaf5b;
   color: white;
-  font-size: 20px;
+  box-shadow: 1px 1px 3px #fb9d4f;
 }
-.menu-item a:hover {
-  background: #333333;
-  color: #ffffff;
+
+.add-btn:hover {
+  background-color: #ffaf5b;
+  box-shadow: 1px 1px 3px inset #fb9d4f;
+}
+
+.component-list {
+  display: flex;
+  justify-content: center;
+  /*justify-content: space-between;*/
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.tagline {
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.guest-detail {
+  background-color: #09d3ac;
+  border-radius: 15px;
+  padding: 20px;
+  width: 250px;
+  height: 140px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  /*box-shadow: 1px 1px 3px #a9a9a9;*/
+}
+
+.guest-detail a {
+  color: #222222;
+}
+
+.guest-detail a:hover {
+  font-size: 17px;
+  color: #222222;
   text-decoration: none;
 }
-.menu-item {
-}
-.dropdown {
-  cursor: pointer;
-  margin-bottom: 20px;
-}
-.dropdown-item {
-  padding: 10px;
-  margin-top: 20px;
-  background: #e2e2e2;
-}
-.logo {
+
+.booking-form__submit input {
+  font-size: 24px;
+  width: 150px !important;
+  height: 45px !important;
+  text-transform: uppercase !important;
+  border: none;
+  border-radius: 15px !important;
+  background-color: #ff5086;
   color: white;
-  font-size: 34px;
-}
-.logo img {
-  padding-top: 20px;
-  margin-bottom: 25px;
-  width: 180px;
+  box-shadow: 1px 1px 3px #ff3b6b;
 }
 
-.component-list{
-  list-style: none;
+.booking-form__submit input:hover {
+  background-color: #ff5086;
+  box-shadow: 1px 1px 6px inset #666666;
 }
 
+.create-form {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  background-color: #74bbf4;
+  border-radius: 15px;
+  /*width: 400px;*/
+  padding: 20px;
+}
+
+.create-form-element {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+}
+
+.create-form-element p {
+  padding-right: 10px;
+}
+
+.create-form-age {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+}
+
+.create-form-age p{
+  padding-right: 70px;
+}
+
+.details {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #74bbf4;
+    padding: 20px;
+    border-radius: 15px;
+    width: 500px;
+}
+.details h4{
+    align-self: center;
+}
+.guest-stay-info {
+    padding-top: 20px;
+}
+.guest-stay-info p{
+    margin-bottom: 5px;
+}
+
+.pop-up {
+    /*margin: 0 auto;*/
+    background-color: #74bbf4;
+    border: none !important;
+    font-family: 'Archivo Black', sans-serif;
+}
+
+
+.pop-up button {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 14px;
+    width: 100px !important;
+    height: 45px !important;
+    text-transform: uppercase !important;
+    border: none;
+    border-radius: 15px !important;
+    background-color: #ff5086;
+    color: white;
+    box-shadow: 1px 1px 3px #ff3b6b;
+}
+
+.pop-up button:hover {
+    background-color: #ff5086;
+    box-shadow: 1px 1px 6px inset #666666;
+}
+
+.report-list h1 {
+    display: flex;
+    justify-content: center;
+}
+
+.report-list ul li {
+    font-size: 24px;
+    list-style: none;
+    background-color: #74bbf4;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.report-list a {
+    color: #222222;
+}
+
+.report-list a:hover {
+    color: #222222;
+}
+
+.pie-chart h1{
+    display: flex;
+    justify-content: center;
+}
+
+.report-most-popular-rooms {
+    justify-content: center;
+    flex-direction: column;
+}
+
+.report-most-popular-rooms h1 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.rooms-container h1{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.rooms-container a:hover {
+    text-decoration: none;
+}
+
+.new-guest-button-container, .add-btn {
+    padding: 0;
+}
+
+.capacity input {
+    margin-left: 45px;
+}
+
+.fc-resource-area .fc-rows .fc-widget-content > div {
+  height: 25.5px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  display: flex;
+  align-items: center;
+}
 .book-button {
   font-size: 24px;
   text-transform: uppercase;
@@ -99,3 +459,6 @@
 }
 
 
+.fc-rows .fc-widget-content > div {
+  height: 25.5px;
+}
