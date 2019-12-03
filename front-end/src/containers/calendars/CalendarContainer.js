@@ -23,9 +23,9 @@ class CalendarContainer extends Component {
             defaultView: 'resourceTimelineMonth',
             // @Docs: https://fullcalendar.io/docs/header
             header: {
-                left: 'today prev next',
-                center: 'title',
-                right: 'resourceTimelineMonth dayGridMonth listMonth dayGridWeek'
+                left: 'today',
+                center: 'prev title next',
+                right: 'resourceTimelineMonth listMonth dayGridWeek'
             },
             buttonText: {
                 prev:     'Prev',

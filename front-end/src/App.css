@@ -167,8 +167,16 @@ body {
   background-color: #ff3b6b;
   box-shadow: 1px 1px 6px inset #444444;
 }
+.room-numbers {
+  text-align: center;
+  width: 170px;
+}
 
 /**/
+.booking-edit-container h1{
+  text-align: center;
+
+}
 
 .room-detail-component {
   display: flex;
