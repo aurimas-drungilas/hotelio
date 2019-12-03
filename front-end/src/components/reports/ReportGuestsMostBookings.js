@@ -38,18 +38,30 @@ class ReportGuestMostBookings extends Component {
     }
 
     render() { 
-        return (  
-            <Chart
-                width={'100%'}
-                height={'300px'}
-                chartType="PieChart"
-                loader={<div>Loading Chart</div>}
-                data={this.state.data}
-                options={{
-                    is3D: true,
-                }}
-                rootProps={{ 'data-testid': '2' }}
-            />
+        return (
+            <div className={"pie-chart"}>
+                <h1>Guest with the Most bookings</h1>
+                <Chart
+                    width={'100%'}
+                    height={'700px'}
+                    chartType="PieChart"
+                    loader={<div>Loading Chart</div>}
+                    data={this.state.data}
+                    options={{
+                        slices: {
+                            0: { color: '#09d3ac'},
+                            1: { color: '#ffaf5b'},
+                            2: { color: '#74bbf4'},
+                            3: { color: '#ff5086'},
+                            4: { color: '#c100f3'}
+                        },
+                        is3D: true,
+                    }}
+                    rootProps={{ 'data-testid': '2' }}
+                />
+
+            </div>
+
         );
     }
 }

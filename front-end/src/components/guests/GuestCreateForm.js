@@ -19,17 +19,17 @@ class GuestCreateForm extends React.Component {
 
     render() { 
         return (  
-            <div className="guest-create-form">
+            <div className="create-form">
                 <form onSubmit={this.handleCreateGuest}>
-                    <div className={"guest-create-form-element"}>
+                    <div className={"create-form-element"}>
                         <p>First Name</p>
                         <input type="text" name="firstName" />
                     </div>
-                    <div className={"guest-create-form-element"}>
+                    <div className={"create-form-element"}>
                         <p>Last Name</p>
                         <input type="text" name="lastName" />
                     </div>
-                    <div className={"guest-create-form-age"}>
+                    <div className={"create-form-age"}>
                         <p>Age</p>
                         <input type="number" min="18" max="120" name="age" />
                     </div>
