@@ -32,6 +32,11 @@ body {
     display: flex;
     flex-direction: row;
 }
+.fc-center h2 {
+  font-size: 40px !important;
+  color: #222222 !important;
+}
+
 
 .App {
     font-family: 'Archivo Black', sans-serif;
@@ -443,6 +448,16 @@ body {
   display: flex;
   align-items: center;
 }
+.book-button {
+  font-size: 24px;
+  text-transform: uppercase;
+  ;
+}
+
+.book-button a {
+
+}
+
 
 .fc-rows .fc-widget-content > div {
   height: 25.5px;
