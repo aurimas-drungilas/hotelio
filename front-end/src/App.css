@@ -5,6 +5,32 @@ body {
 .fc-center h2 {
     font-size: 40px !important;
     color: #222222 !important;
+    margin-right: 15px !important;
+    margin-left: 15px !important;
+}
+.fc-next-button {
+    text-transform: uppercase !important;
+    background-color: #ffaf5b !important;
+    color: white;
+    border-radius: 15px !important;
+    border: 0 !important;
+    box-shadow: 1px 1px 3px #fb9d4f;
+    margin: 0 !important;
+}
+
+.fc-prev-button {
+    text-transform: uppercase !important;
+    background-color: #ffaf5b !important;
+    color: white;
+    border-radius: 15px !important;
+    border: 0 !important;
+    box-shadow: 1px 1px 3px #fb9d4f;
+    margin: 0 !important;
+}
+
+.fc-center {
+    display: flex;
+    flex-direction: row;
 }
 
 .App {
@@ -233,12 +259,18 @@ body {
   flex-wrap: wrap;
 }
 
+.tagline {
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
 .guest-detail {
   background-color: #09d3ac;
   border-radius: 15px;
   padding: 20px;
   width: 250px;
-  height: 100px;
+  height: 140px;
   margin-bottom: 20px;
   margin-right: 20px;
   /*box-shadow: 1px 1px 3px #a9a9a9;*/
@@ -271,36 +303,138 @@ body {
   box-shadow: 1px 1px 6px inset #666666;
 }
 
-.guest-create-form {
+.create-form {
   display: flex;
   align-self: center;
   justify-content: center;
   background-color: #74bbf4;
   border-radius: 15px;
-  width: 400px;
+  /*width: 400px;*/
   padding: 20px;
 }
 
-.guest-create-form-element {
+.create-form-element {
   display: flex;
   flex-direction: row;
   padding: 10px;
 }
 
-.guest-create-form-element p {
+.create-form-element p {
   padding-right: 10px;
 }
 
-.guest-create-form-age {
+.create-form-age {
   display: flex;
   flex-direction: row;
   padding: 10px;
 }
 
-.guest-create-form-age p {
+.create-form-age p{
   padding-right: 70px;
 }
 
+.details {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #74bbf4;
+    padding: 20px;
+    border-radius: 15px;
+    width: 500px;
+}
+.details h4{
+    align-self: center;
+}
+.guest-stay-info {
+    padding-top: 20px;
+}
+.guest-stay-info p{
+    margin-bottom: 5px;
+}
+
+.pop-up {
+    /*margin: 0 auto;*/
+    background-color: #74bbf4;
+    border: none !important;
+    font-family: 'Archivo Black', sans-serif;
+}
+
+
+.pop-up button {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 14px;
+    width: 100px !important;
+    height: 45px !important;
+    text-transform: uppercase !important;
+    border: none;
+    border-radius: 15px !important;
+    background-color: #ff5086;
+    color: white;
+    box-shadow: 1px 1px 3px #ff3b6b;
+}
+
+.pop-up button:hover {
+    background-color: #ff5086;
+    box-shadow: 1px 1px 6px inset #666666;
+}
+
+.report-list h1 {
+    display: flex;
+    justify-content: center;
+}
+
+.report-list ul li {
+    font-size: 24px;
+    list-style: none;
+    background-color: #74bbf4;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.report-list a {
+    color: #222222;
+}
+
+.report-list a:hover {
+    color: #222222;
+}
+
+.pie-chart h1{
+    display: flex;
+    justify-content: center;
+}
+
+.report-most-popular-rooms {
+    justify-content: center;
+    flex-direction: column;
+}
+
+.report-most-popular-rooms h1 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.rooms-container h1{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.rooms-container a:hover {
+    text-decoration: none;
+}
+
+.new-guest-button-container, .add-btn {
+    padding: 0;
+}
+
+.capacity input {
+    margin-left: 45px;
+}
 
 
 

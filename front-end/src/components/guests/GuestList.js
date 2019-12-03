@@ -19,14 +19,15 @@ const GuestList = (props) => {
     })
 
     return ( 
-        <div>
+        <div className={"guest-list"}>
             <div className={"new-guest-button-container"}>
                 <Link to="/guests/new">
                     <button className="add-btn">Add New Guest</button>
                 </Link>
             </div>
+            <p className={"tagline"}>Click on Guest to manage</p>
 
-        <ul className="component-list">
+            <ul className="component-list">
             {guests}
         </ul>
         </div>
