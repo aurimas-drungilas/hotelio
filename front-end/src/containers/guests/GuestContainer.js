@@ -41,6 +41,7 @@ class GuestContainer extends Component {
     render() { 
         return ( 
             <div className="guest-container">
+                <h1>Guests</h1>
                 <Router>
                 <Fragment>
                     <Switch>

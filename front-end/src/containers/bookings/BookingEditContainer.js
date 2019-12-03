@@ -17,7 +17,7 @@ class BookingEditContainer extends Component {
 
     render() { 
         return (
-            <div className={"c"}>
+            <div className={"booking-form-edit-container"}>
                 <h1>Update Guests Booking</h1>
                 <BookingEditForm
                     booking={this.props.booking}
