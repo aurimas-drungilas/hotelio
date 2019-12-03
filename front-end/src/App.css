@@ -233,6 +233,11 @@ body {
   flex-wrap: wrap;
 }
 
+.tagline {
+    display: flex;
+    justify-content: center;
+}
+
 .guest-detail {
   background-color: #09d3ac;
   border-radius: 15px;
@@ -347,7 +352,63 @@ body {
     box-shadow: 1px 1px 6px inset #666666;
 }
 
+.report-list h1 {
+    display: flex;
+    justify-content: center;
+}
 
+.report-list ul li {
+    font-size: 24px;
+    list-style: none;
+    background-color: #74bbf4;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.report-list a {
+    color: #222222;
+}
+
+.report-list a:hover {
+    color: #222222;
+}
+
+.pie-chart h1{
+    display: flex;
+    justify-content: center;
+}
+
+.report-most-popular-rooms {
+    justify-content: center;
+    flex-direction: column;
+}
+
+.report-most-popular-rooms h1 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.rooms-container h1{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.rooms-container a {
+    display: flex;
+    justify-content: center;
+}
+
+.rooms-container a:hover {
+    text-decoration: none;
+}
+
+.new-guest-button-container, .add-btn {
+    padding: 0;
+}
 
 
 

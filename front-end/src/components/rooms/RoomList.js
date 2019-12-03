@@ -19,8 +19,8 @@ const RoomList = (props) => {
     })
 
     return ( 
-        <div>
-        <Link to="/rooms/new"><button className="add-btn">Add New Room</button></Link>
+        <div className={"rooms-container"}>
+        <Link to="/rooms/new"><button className="new-guest-button-container add-btn">Add New Room</button></Link>
         <ul className="component-list">
             {rooms}
         </ul>

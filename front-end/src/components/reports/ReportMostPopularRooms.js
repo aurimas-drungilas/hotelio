@@ -39,12 +39,16 @@ class ReportMostPopularRooms extends Component {
     render() { 
         return (  
             <div className="report-most-popular-rooms">
+                <h1>Most Popular Rooms</h1>
                 <Chart
                     width={'100%'}
                     height={'300px'}
                     chartType="Bar"
                     loader={<div>Loading Chart</div>}
                     data={this.state.data}
+                    options={{
+                        colors: ['#ff5086']
+                    }}
                     // For tests
                     rootProps={{ 'data-testid': '1' }}
                 />
