@@ -23,9 +23,16 @@ class CalendarContainer extends Component {
             defaultView: 'resourceTimelineMonth',
             // @Docs: https://fullcalendar.io/docs/header
             header: {
-                left: 'today prev next',
-                center: 'title',
-                right: 'resourceTimelineMonth dayGridMonth listMonth dayGridWeek'
+                left: 'today',
+                center: 'prev title next',
+                right: 'resourceTimelineMonth listMonth dayGridWeek'
+            },
+            buttonText: {
+                prev:     'Prev',
+                next:     'Next',
+                today:    'Today',
+                resourceTimelineMonth: 'Month',
+                listMonth: 'List'
             },
             // @Docs: https://fullcalendar.io/docs/event-object
             events: [],
@@ -139,6 +146,7 @@ class CalendarContainer extends Component {
                     resources={this.state.resources}
                     resourceColumns={this.state.resourceColumns}
                     schedulerLicenseKey="GPL-My-Project-Is-Open-Source"
+                    buttonText={this.state.buttonText}
                     />
                 <CalendarBookingDetailsModal booking={this.state.selectedBooking} ref={this.modalRef} />
             </div>
