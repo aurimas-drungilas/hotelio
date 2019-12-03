@@ -24,6 +24,7 @@ class BookingForm extends React.Component {
         this.handleEndDateChange = this.handleEndDateChange.bind(this);
         this.handleGuestChange = this.handleGuestChange.bind(this);
         this.handleSelectGuest = this.handleSelectGuest.bind(this);
+        this.startAndEndDatesValid = this.startAndEndDatesValid.bind(this);
         this.modalRef = React.createRef();
     }
 
@@ -41,6 +42,10 @@ class BookingForm extends React.Component {
     }
 
     filterAvailableRooms() {
+        if (!this.startAndEndDatesValid()) {
+            this.setState({availableRooms: []});
+            return null;
+        }
         const rooms = this.state.rooms.filter((room) => {
             return !room.bookings.find((booking) => {
                 const selectedStartDate = new Date(this.state.startDate);
@@ -55,6 +60,16 @@ class BookingForm extends React.Component {
             });
         });
         this.setState({availableRooms: rooms});
+    }
+
+    startAndEndDatesValid() {
+        const startDate = new Date(this.state.startDate);
+        const endDate = new Date(this.state.endDate);
+        debugger;
+        if (endDate > startDate) {
+            return true;
+        }
+        return false
     }
 
     populateAvailableGuests() {
