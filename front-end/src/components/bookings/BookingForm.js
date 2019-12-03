@@ -112,7 +112,7 @@ class BookingForm extends React.Component {
                 <form onSubmit={this.handleNewBooking}>
                     <div className="booking-form__field">
                         <p>Guest:</p>
-                        <select name="guest" defaultValue={''} value={this.selectedGuest} onChange={this.handleGuestChange} required>
+                        <select name="guest" defaultValue={''} value={this.state.selectedGuest} onChange={this.handleGuestChange} required>
                             <option value={''} disabled={'disabled'}>Select a guest</option>
                             <option value={'new'} >New guest</option>
                             {availableGuestsOptions}
