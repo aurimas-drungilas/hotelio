@@ -53,8 +53,7 @@ class ReportGuestMostBookings extends Component {
                             1: { color: '#ffaf5b'},
                             2: { color: '#74bbf4'},
                             3: { color: '#ff5086'},
-                            4: { color: '#09d3ac'},
-
+                            4: { color: '#c100f3'}
                         },
                         is3D: true,
                     }}

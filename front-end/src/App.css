@@ -5,6 +5,32 @@ body {
 .fc-center h2 {
     font-size: 40px !important;
     color: #222222 !important;
+    margin-right: 15px !important;
+    margin-left: 15px !important;
+}
+.fc-next-button {
+    text-transform: uppercase !important;
+    background-color: #ffaf5b !important;
+    color: white;
+    border-radius: 15px !important;
+    border: 0 !important;
+    box-shadow: 1px 1px 3px #fb9d4f;
+    margin: 0 !important;
+}
+
+.fc-prev-button {
+    text-transform: uppercase !important;
+    background-color: #ffaf5b !important;
+    color: white;
+    border-radius: 15px !important;
+    border: 0 !important;
+    box-shadow: 1px 1px 3px #fb9d4f;
+    margin: 0 !important;
+}
+
+.fc-center {
+    display: flex;
+    flex-direction: row;
 }
 
 .App {
@@ -234,6 +260,7 @@ body {
 }
 
 .tagline {
+    padding-top: 10px;
     display: flex;
     justify-content: center;
 }
@@ -276,7 +303,7 @@ body {
   box-shadow: 1px 1px 6px inset #666666;
 }
 
-.guest-create-form {
+.create-form {
   display: flex;
   align-self: center;
   justify-content: center;
@@ -286,27 +313,27 @@ body {
   padding: 20px;
 }
 
-.guest-create-form-element {
+.create-form-element {
   display: flex;
   flex-direction: row;
   padding: 10px;
 }
 
-.guest-create-form-element p {
+.create-form-element p {
   padding-right: 10px;
 }
 
-.guest-create-form-age {
+.create-form-age {
   display: flex;
   flex-direction: row;
   padding: 10px;
 }
 
-.guest-create-form-age p {
+.create-form-age p{
   padding-right: 70px;
 }
 
-.guest-details {
+.details {
     display: flex;
     align-self: center;
     justify-content: center;
@@ -316,7 +343,7 @@ body {
     border-radius: 15px;
     width: 500px;
 }
-.guest-details h4{
+.details h4{
     align-self: center;
 }
 .guest-stay-info {
@@ -394,12 +421,7 @@ body {
 .rooms-container h1{
     display: flex;
     justify-content: center;
-    margin-bottom: 30px;
-}
-
-.rooms-container a {
-    display: flex;
-    justify-content: center;
+    margin-bottom: 25px;
 }
 
 .rooms-container a:hover {
@@ -408,6 +430,10 @@ body {
 
 .new-guest-button-container, .add-btn {
     padding: 0;
+}
+
+.capacity input {
+    margin-left: 45px;
 }
 
 

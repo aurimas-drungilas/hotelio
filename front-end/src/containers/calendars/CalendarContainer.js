@@ -135,8 +135,7 @@ class CalendarContainer extends Component {
     render() { 
         return (
             <div className="calendar-container">
-                <h1>Calendar</h1>
-                <FullCalendar 
+                <FullCalendar
                     defaultView={this.state.defaultView} 
                     header={this.state.header}
                     plugins={[dayGridPlugin, interactionPlugin, listPlugin, resourceDayGridPlugin, resourceTimelinePlugin]}

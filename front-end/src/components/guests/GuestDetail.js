@@ -56,7 +56,7 @@ const GuestDetail = (props) => {
     })
 
     return ( 
-        <div className="guest-details">
+        <div className="details">
             <h4>All bookings for {props.guest.firstName} {props.guest.lastName}: </h4>
             {bookings}
         </div>
