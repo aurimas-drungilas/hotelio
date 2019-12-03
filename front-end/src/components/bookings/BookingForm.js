@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import Request from '../../helpers/request';
+import GuestCreateModal from '../guests/GuestCreateModal';
 
 class BookingForm extends React.Component {
 
@@ -18,7 +19,10 @@ class BookingForm extends React.Component {
         this.populateAvailableRooms = this.populateAvailableRooms.bind(this);
         this.populateAvailableGuests = this.populateAvailableGuests.bind(this);
         this.handleStartDateChange = this.handleStartDateChange.bind(this);
-        this.hanhandleEndDateChange = this.handleEndDateChange.bind(this);
+        this.handleEndDateChange = this.handleEndDateChange.bind(this);
+        this.handleGuestChange = this.handleGuestChange.bind(this);
+        this.handleSelectGuest = this.handleSelectGuest.bind(this);
+        this.modalRef = React.createRef();
     }
 
     componentDidMount() {
@@ -38,7 +42,7 @@ class BookingForm extends React.Component {
     populateAvailableGuests() {
         const request = new Request();
         const url = '/api/guests?size=1000';
-        request.get(url)
+        return request.get(url)
             .then(json => this.setState({availableGuests: json._embedded.guests}));
     }
 
@@ -51,13 +55,31 @@ class BookingForm extends React.Component {
         }
 
         const booking = {
-            "guest": event.target.guest.value,
+            "guest": this.state.selectedGuest,
             "startDate": event.target.startDate.value,
             "endDate": event.target.endDate.value,
             "numberOfPeople": event.target.numberOfPeople.value,
             "rooms": roomsSelected
         }
         this.props.onNewBooking(booking);
+    }
+
+    handleGuestChange(event) {
+        this.setState({selectedGuest: event.target.value});
+        console.log(event.target.value);
+        if (event.target.value === 'new') {
+            console.log("new selected");
+            this.modalRef.current.showModal();
+        }
+    }
+
+    handleSelectGuest(value) {
+        console.log("booking handle selected guest", value);
+        this.populateAvailableGuests()
+            .then(() => {
+                console.log("wait till the list is updated");
+                this.setState({selectedGuest: value});
+            });
     }
 
     handleStartDateChange(event) {
@@ -90,9 +112,9 @@ class BookingForm extends React.Component {
                 <form onSubmit={this.handleNewBooking}>
                     <div className="booking-form__field">
                         <p>Guest:</p>
-                        <select name="guest" defaultValue={''} required>
+                        <select name="guest" defaultValue={''} value={this.selectedGuest} onChange={this.handleGuestChange} required>
                             <option value={''} disabled={'disabled'}>Select a guest</option>
-                            <option value={'new'} disabled>New guest</option>
+                            <option value={'new'} >New guest</option>
                             {availableGuestsOptions}
                         </select>
                     </div>
@@ -123,6 +145,8 @@ class BookingForm extends React.Component {
                         <button type="submit">BOOK</button>
                     </div>
                 </form>
+
+                <GuestCreateModal ref={this.modalRef} onSelectGuest={this.handleSelectGuest} />
             </div>
         );
     }
