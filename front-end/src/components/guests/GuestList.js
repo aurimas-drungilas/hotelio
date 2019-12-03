@@ -20,7 +20,12 @@ const GuestList = (props) => {
 
     return ( 
         <div>
-        <Link to="/guests/new"><button className="add-btn">Add New Guest</button></Link>
+            <div className={"new-guest-button-container"}>
+                <Link to="/guests/new">
+                    <button className="add-btn">Add New Guest</button>
+                </Link>
+            </div>
+
         <ul className="component-list">
             {guests}
         </ul>

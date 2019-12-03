@@ -37,13 +37,15 @@ const Guest = (props) => {
     const url = "/guests/" + props.guest.id;
     const rewardPoints = totalNights * 10;
 
-    return ( 
-        <Fragment>
-            <Link to={url} className="name">Guest name: {props.guest.firstName} {props.guest.lastName}</Link>
-            <p>Age: {props.guest.age}</p>
-            <p>Reward Points: {rewardPoints}</p>
-        </Fragment>
-     );
+
+    return (
+        <div className={"guest-detail"}>
+            <Fragment>
+                <Link to={url} className="name">{props.guest.firstName} {props.guest.lastName}</Link>
+                <p>Age: {props.guest.age}</p>
+            </Fragment>
+        </div>
+    );
 }
  
 export default Guest;
