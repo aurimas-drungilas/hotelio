@@ -8,11 +8,45 @@ const GuestDetail = (props) => {
     }
 
     const bookings = props.guest.bookings.map((booking, index) => {
+
+        // Get todays date
         const endDate = booking.endDate.toString().substring(0,10);
-        return <div key={index}>
+        let today = new Date();
+        const dd = String(today.getDate()).padStart(2, '0');
+        const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        const yyyy = today.getFullYear();
+
+        today = mm + '/' + dd + '/' + yyyy;
+
+        // Set Milliseconds per day
+        const _MS_PER_DAY = 1000 * 60 * 60 * 24;
+
+        function dateDiffInDays(a, b) {
+            // Discard the time and time-zone information.
+            const utc1 = Date.UTC(a.getFullYear(), a.getMonth(), a.getDate());
+            const utc2 = Date.UTC(b.getFullYear(), b.getMonth(), b.getDate());
+    
+            return Math.floor((utc2 - utc1) / _MS_PER_DAY);
+        }
+
+        // Find difference
+        const a = new Date(today),
+            b = new Date(endDate),
+            difference = dateDiffInDays(a, b);
+            
+        // Print statement dependant on previous or current
+        if (difference >= 0){
+            return <div key={index}>
                 <p>Leaving on: {endDate}</p>
                 <p>Number of Guests: {booking.numberOfPeople}</p>
                 </div>
+        } else {
+            return <div key={index}>
+                <p>Checked out: {endDate}</p>
+                <p>Number of Guests: {booking.numberOfPeople}</p>
+                </div>
+        }
+        
     })
 
     return ( 
