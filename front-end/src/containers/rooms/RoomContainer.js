@@ -40,6 +40,7 @@ class RoomContainer extends Component {
     render() { 
         return ( 
             <div className="rooms-container">
+                <h1>Rooms</h1>
             <Router>
                 <Fragment>
                     <Switch>

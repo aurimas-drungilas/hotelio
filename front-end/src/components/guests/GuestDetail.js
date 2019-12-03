@@ -7,7 +7,13 @@ const GuestDetail = (props) => {
         return "Loading your requested information."
     }
 
-    const bookings = props.guest.bookings.map((booking, index) => {
+    const sortedBookings = props.guest.bookings.sort((a,b) => {
+        let dateA = new Date(a.endDate)
+        let dateB = new Date(b.endDate)
+        return dateB - dateA;
+    })
+
+    const bookings = sortedBookings.map((booking, index) => {
 
         // Get todays date
         const endDate = booking.endDate.toString().substring(0,10);
@@ -30,9 +36,9 @@ const GuestDetail = (props) => {
         }
 
         // Find difference
-        const a = new Date(today),
-            b = new Date(endDate),
-            difference = dateDiffInDays(a, b);
+        const todayDate = new Date(today),
+            exitDate = new Date(endDate),
+            difference = dateDiffInDays(todayDate, exitDate);
             
         // Print statement dependant on previous or current
         if (difference >= 0){

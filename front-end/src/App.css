@@ -42,7 +42,6 @@ body {
 
 .main-container {
     padding: 30px;
-
 }
 
 .wrapper {
@@ -101,6 +100,10 @@ body {
 }
 
 /*Styles relating to booking form*/
+.booking-form {
+  padding: 20px;
+  padding-top: 30px;
+}
 
 .booking-form-container {
   display: flex;
@@ -109,16 +112,16 @@ body {
 
 .booking-form-container h1 {
   align-self: center;
+  margin-bottom: 20px;
 }
-
 
 .booking-form {
   display: flex;
+  align-self: center;
   justify-content: center;
   background-color: #09d3ac;
-  padding-top: 50px;
-  padding-bottom: 50px;
   border-radius: 15px;
+  width: 500px;
 }
 
 .booking-form__field {
@@ -158,29 +161,148 @@ body {
   text-transform: uppercase !important;
   border: none;
   border-radius: 15px !important;
-  background-color: #ff3b6b;
+  background-color: #ff5086;
   color: white;
-  box-shadow: 1px 1px 3px #444444;
+  box-shadow: 1px 1px 3px #ff3b6b;
 }
 
 .booking-form__submit button:hover {
-  background-color: #ff3b6b;
-  box-shadow: 1px 1px 6px inset #444444;
+  background-color: #ff5086;
+  box-shadow: 1px 1px 6px inset #666666;
 }
 .room-numbers {
   text-align: center;
   width: 170px;
 }
 
-/**/
-.booking-edit-container h1{
-  text-align: center;
+.booking-form-edit-container {
+  display: flex;
+  flex-direction: column;
+}
 
+.booking-form-edit-container h1 {
+  align-self: center;
+  margin-bottom: 20px;
 }
 
 .room-detail-component {
   display: flex;
   flex-direction: row;
 }
+
+/*Styles for the guests*/
+
+.guest-container {
+  display: flex;
+  flex-direction: column;
+}
+.guest-container h1 {
+  align-self: center;
+  margin-bottom: 20px;
+
+}
+
+.new-guest-button-container {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 30px;
+}
+
+.add-btn {
+  font-size: 24px;
+  width: 300px !important;
+  height: 45px !important;
+  text-transform: uppercase !important;
+  border: none;
+  border-radius: 15px !important;
+  background-color: #ffaf5b;
+  color: white;
+  box-shadow: 1px 1px 3px #fb9d4f;
+}
+
+.add-btn:hover {
+  background-color: #ffaf5b;
+  box-shadow: 1px 1px 3px inset #fb9d4f;
+}
+
+.component-list {
+  display: flex;
+  justify-content: center;
+  /*justify-content: space-between;*/
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.guest-detail {
+  background-color: #09d3ac;
+  border-radius: 15px;
+  padding: 20px;
+  width: 250px;
+  height: 100px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  /*box-shadow: 1px 1px 3px #a9a9a9;*/
+}
+
+.guest-detail a {
+  color: #222222;
+}
+
+.guest-detail a:hover {
+  font-size: 17px;
+  color: #222222;
+  text-decoration: none;
+}
+
+.booking-form__submit input {
+  font-size: 24px;
+  width: 150px !important;
+  height: 45px !important;
+  text-transform: uppercase !important;
+  border: none;
+  border-radius: 15px !important;
+  background-color: #ff5086;
+  color: white;
+  box-shadow: 1px 1px 3px #ff3b6b;
+}
+
+.booking-form__submit input:hover {
+  background-color: #ff5086;
+  box-shadow: 1px 1px 6px inset #666666;
+}
+
+.guest-create-form {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  background-color: #74bbf4;
+  border-radius: 15px;
+  width: 400px;
+  padding: 20px;
+}
+
+.guest-create-form-element {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+}
+
+.guest-create-form-element p {
+  padding-right: 10px;
+}
+
+.guest-create-form-age {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+}
+
+.guest-create-form-age p {
+  padding-right: 70px;
+}
+
+
+
+
 
 
