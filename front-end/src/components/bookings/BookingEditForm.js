@@ -93,7 +93,7 @@ const BookingEditForm = (props) => {
                     </div>
 
                     <div className="booking-form__submit">
-                        <button type="submit">Update Booking</button>
+                        <button type="submit">Update</button>
                     </div>
                 </form>
             </div>

@@ -114,7 +114,7 @@ class BookingForm extends React.Component {
 
                     <div className="booking-form__field">
                         <p>Available rooms:</p>
-                        <select name="rooms" size="5" multiple={true} required>
+                        <select className={"room-numbers"} name="rooms" size="5" multiple={true} required>
                             {availableRoomsOptions}
                         </select>
                     </div>
