@@ -23,7 +23,7 @@ class ReportMostPopularRooms extends Component {
 
     populateReportData() {
         const request = new Request();
-        const url = '/api/rooms';
+        const url = '/api/rooms?size=1000';
 
         request.get(url)
             .then((json) => {

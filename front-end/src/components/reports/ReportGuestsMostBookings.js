@@ -17,7 +17,7 @@ class ReportGuestMostBookings extends Component {
 
     populateGuestsMostBookings() {
         const request = new Request();
-        const url = '/api/guests';
+        const url = '/api/guests?size=1000';
 
         request.get(url)
             .then((json) => {
