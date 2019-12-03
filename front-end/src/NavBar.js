@@ -24,6 +24,7 @@ const NavBar = () => {
               <MenuItem className="menu-item"><a href="/calendars">CALENDAR</a></MenuItem>
               <MenuItem className="menu-item" ><a href="/guests">GUESTS</a></MenuItem>
               <MenuItem className="menu-item" ><a href="/rooms">ROOMS</a></MenuItem>
+              <MenuItem className="menu-item" ><a href="/reports">REPORTS</a></MenuItem>
             </Menu>
           </ReactOffcanvasComponent>
         </div>
