@@ -82,7 +82,7 @@ class CalendarContainer extends Component {
     populateRoomsList() {
         // AKA resources
         const request = new Request();
-        const url = '/api/rooms';
+        const url = '/api/rooms?size=100';
         request.get(url)
             .then(rooms => {
                 const formattedRooms = [];

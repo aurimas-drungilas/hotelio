@@ -17,7 +17,7 @@ class GuestContainer extends Component {
 
     componentDidMount() {
         const request = new Request();
-        request.get('/api/guests')
+        request.get('/api/guests?size=100')
         .then(data => {
             this.setState({
                 guests : data._embedded.guests
