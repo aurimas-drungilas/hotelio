@@ -43,6 +43,7 @@ const Guest = (props) => {
             <Fragment>
                 <Link to={url} className="name">{props.guest.firstName} {props.guest.lastName}</Link>
                 <p>Age: {props.guest.age}</p>
+                <p>Reward Points: {rewardPoints}</p>
             </Fragment>
         </div>
     );
