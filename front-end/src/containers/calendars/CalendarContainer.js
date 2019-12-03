@@ -146,6 +146,11 @@ class CalendarContainer extends Component {
                     resourceColumns={this.state.resourceColumns}
                     schedulerLicenseKey="GPL-My-Project-Is-Open-Source"
                     buttonText={this.state.buttonText}
+                    eventBackgroundColor={'#09d3ac'}
+                    eventBorderColor={'#09d3ac'}
+                    resourceAreaWidth={'240px'}
+                    contentHeight={410}
+                    timeGridEventMinHeight={100}
                     />
                 <CalendarBookingDetailsModal booking={this.state.selectedBooking} ref={this.modalRef} />
             </div>

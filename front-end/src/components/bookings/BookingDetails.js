@@ -21,7 +21,7 @@ const BookingDetails = (props) => {
             
 
     return(
-        <div class="booking-details">
+        <div className="booking-details">
             <p>{props.booking._embedded.guest.firstName} {props.booking._embedded.guest.lastName}</p>
             <p>Start date: {props.booking.startDate.substring(0,10)}</p>
             <p>End date: {props.booking.endDate.substring(0,10)}</p>

@@ -436,7 +436,14 @@ body {
     margin-left: 45px;
 }
 
+.fc-resource-area .fc-rows .fc-widget-content > div {
+  height: 25.5px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  display: flex;
+  align-items: center;
+}
 
-
-
-
+.fc-rows .fc-widget-content > div {
+  height: 25.5px;
+}
