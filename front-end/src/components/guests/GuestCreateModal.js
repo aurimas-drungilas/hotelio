@@ -25,6 +25,7 @@ class CalendarBookingDetailsModal extends React.Component {
     }
 
     closeModal() {
+        this.props.onSelectGuest('');
         this.setState({
             show: false
         });
@@ -35,8 +36,11 @@ class CalendarBookingDetailsModal extends React.Component {
         const url = '/api/guests';
         request.post(url, guest)
             .then((data) => data.json())
-            .then((json) => this.props.onSelectGuest(json._links.self.href))
-            .then(() => this.closeModal());
+            .then((json) => {
+                this.closeModal();
+                this.props.onSelectGuest(json._links.self.href)
+            })
+            
     }
 
     render() {
