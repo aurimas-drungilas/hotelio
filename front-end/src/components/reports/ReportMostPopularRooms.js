@@ -45,6 +45,8 @@ class ReportMostPopularRooms extends Component {
                     chartType="Bar"
                     loader={<div>Loading Chart</div>}
                     data={this.state.data}
+                    // For tests
+                    rootProps={{ 'data-testid': '1' }}
                 />
             </div>
         );
