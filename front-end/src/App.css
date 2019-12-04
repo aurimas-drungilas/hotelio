@@ -462,3 +462,7 @@ body {
 .fc-rows .fc-widget-content > div {
   height: 25.5px;
 }
+
+.fc-head .fc-scroller::-webkit-scrollbar {
+  display: none;
+}
