@@ -2,7 +2,7 @@
 
 Simplifying all your hotel management needs because managing your guests shouldn’t be as hard as changing a king sized duvet cover.
 
-Find project brief [here](PROJECT_BRIEF.md).
+This app was developed as a CodeClan group (3 people) project. Please read [brief here](BRIEF.md).
 
 ## Setup
 
