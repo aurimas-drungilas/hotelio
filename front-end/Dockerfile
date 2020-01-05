@@ -1,10 +1,11 @@
-FROM node:lts-slim
+FROM node:12
 
-RUN mkdir -p /usr/src/app
+RUN mkdir -p /app
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
-COPY package*.json ./
+COPY package.json .
+COPY package-lock.json .
 
 RUN npm install
 
